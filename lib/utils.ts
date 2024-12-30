@@ -68,3 +68,80 @@ export const formatError = (error: any): string => {
       : JSON.stringify(error.message);
   }
 };
+
+export function calculateFutureDate(days: number) {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + days);
+  return currentDate;
+}
+
+export function getMonthName(yearAndMonth: string) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [year, monthNumber] = yearAndMonth.split("-");
+  const date = new Date();
+  date.setMonth(parseInt(monthNumber) - 1);
+  return new Date().getMonth() === parseInt(monthNumber) - 1
+    ? `Tháng ${monthNumber} (Hiện tại)`
+    : `Tháng ${monthNumber}`;
+}
+
+export function calculatePastDate(days: number) {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() - days);
+  return currentDate;
+}
+
+export function timeUntilMidnight(): { hours: number; minutes: number } {
+  const now = new Date();
+  const midnight = new Date();
+  midnight.setHours(24, 0, 0, 0);
+  const diff = midnight.getTime() - now.getTime();
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  return { hours, minutes };
+}
+
+export const formatDateTime = (dateString: Date) => {
+  const dateTimeOptions: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+  };
+
+  const dateOptions: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  };
+
+  const timeOptions: Intl.DateTimeFormatOptions = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+  };
+
+  // Using Vietnamese locale
+  const formattedDateTime: string = new Date(dateString).toLocaleString(
+    "vi-VN",
+    dateTimeOptions
+  );
+
+  const formattedDate: string = new Date(dateString).toLocaleString(
+    "vi-VN",
+    dateOptions
+  );
+
+  const formattedTime: string = new Date(dateString).toLocaleString(
+    "vi-VN",
+    timeOptions
+  );
+
+  return {
+    dateTime: formattedDateTime, // Example: "30/12/2024 15:30"
+    dateOnly: formattedDate, // Example: "30/12/2024"
+    timeOnly: formattedTime, // Example: "15:30"
+  };
+};

@@ -61,6 +61,16 @@ export const OrderItemSchema = z.object({
   color: z.string().optional(),
 });
 
+export const ShippingAddressSchema = z.object({
+  fullName: z.string().min(1, "Họ và tên là bắt buộc"),
+  street: z.string().min(1, "Địa chỉ là bắt buộc"),
+  city: z.string().min(1, "Thành phố là bắt buộc"),
+  postalCode: z.string().min(1, "Mã bưu chính là bắt buộc"),
+  province: z.string().min(1, "Tỉnh/Thành phố là bắt buộc"),
+  phone: z.string().min(1, "Số điện thoại là bắt buộc"),
+  country: z.string().min(1, "Quốc gia là bắt buộc"),
+});
+
 export const CartSchema = z.object({
   items: z
     .array(OrderItemSchema)
@@ -72,6 +82,7 @@ export const CartSchema = z.object({
   paymentMethod: z.optional(z.string()),
   deliveryDateIndex: z.optional(z.number()),
   expectedDeliveryDate: z.optional(z.date()),
+  shippingAddress: z.optional(ShippingAddressSchema),
 });
 
 const UserName = z

@@ -44,3 +44,38 @@ export const colorTranslations: any = {
   Copper: "Đồng",
   Platinum: "Platinum",
 };
+
+export const AVAILABLE_PAYMENT_METHODS = [
+  {
+    name: "PayPal",
+    commission: 0,
+    isDefault: true,
+  },
+  {
+    name: "Cash On Delivery",
+    commission: 0,
+    isDefault: false,
+  },
+];
+export const DEFAULT_PAYMENT_METHOD =
+  process.env.DEFAULT_PAYMENT_METHOD || "PayPal";
+export const AVAILABLE_DELIVERY_DATES = [
+  {
+    name: "Hỏa tốc",
+    daysToDeliver: 1,
+    shippingPrice: 12.9,
+    freeShippingMinPrice: 0,
+  },
+  {
+    name: "3 ngày",
+    daysToDeliver: 3,
+    shippingPrice: 6.9,
+    freeShippingMinPrice: 0,
+  },
+  {
+    name: "5 ngày",
+    daysToDeliver: 5,
+    shippingPrice: 4.9,
+    freeShippingMinPrice: 35,
+  },
+];
