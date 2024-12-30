@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { colorTranslations } from "@/lib/constants";
 import { IProduct } from "@/lib/db/models/product.model";
 import Link from "next/link";
+
 export default function SelectVariant({
   product,
   size,
@@ -42,7 +44,7 @@ export default function SelectVariant({
                   }}
                   className="h-4 w-4 rounded-full border border-muted-foreground"
                 ></div>
-                {x}
+                {colorTranslations[x] || x}
               </Link>
             </Button>
           ))}
