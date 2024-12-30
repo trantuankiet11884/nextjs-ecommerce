@@ -18,6 +18,7 @@ import { SERVER_URL } from "@/lib/constants";
 type OrderInformationProps = {
   order: IOrder;
 };
+
 PurchaseReceiptEmail.PreviewProps = {
   order: {
     _id: "123",
@@ -58,29 +59,30 @@ PurchaseReceiptEmail.PreviewProps = {
     isDelivered: true,
   } as IOrder,
 } satisfies OrderInformationProps;
+
 const dateFormatter = new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium" });
 export default async function PurchaseReceiptEmail({
   order,
 }: OrderInformationProps) {
   return (
     <Html>
-      <Preview>View order receipt</Preview>
+      <Preview>Xem biên nhận đơn hàng</Preview>
       <Tailwind>
         <Head />
         <Body className="font-sans bg-white">
           <Container className="max-w-xl">
-            <Heading>Purchase Receipt</Heading>
+            <Heading>Biên lai mua hàng</Heading>
             <Section>
               <Row>
                 <Column>
                   <Text className="mb-0 text-gray-500 whitespace-nowrap text-nowrap mr-4">
-                    Order ID
+                    Mã đơn hàng
                   </Text>
                   <Text className="mt-0 mr-4">{order._id.toString()}</Text>
                 </Column>
                 <Column>
                   <Text className="mb-0 text-gray-500 whitespace-nowrap text-nowrap mr-4">
-                    Purchased On
+                    Đã mua vào lúc
                   </Text>
                   <Text className="mt-0 mr-4">
                     {dateFormatter.format(order.createdAt)}
@@ -88,7 +90,7 @@ export default async function PurchaseReceiptEmail({
                 </Column>
                 <Column>
                   <Text className="mb-0 text-gray-500 whitespace-nowrap text-nowrap mr-4">
-                    Price Paid
+                    Giá phải trả
                   </Text>
                   <Text className="mt-0 mr-4">
                     {formatCurrency(order.totalPrice)}
@@ -122,10 +124,10 @@ export default async function PurchaseReceiptEmail({
                 </Row>
               ))}
               {[
-                { name: "Items", price: order.itemsPrice },
-                { name: "Tax", price: order.taxPrice },
-                { name: "Shipping", price: order.shippingPrice },
-                { name: "Total", price: order.totalPrice },
+                { name: "Sản phẩm", price: order.itemsPrice },
+                { name: "VAT", price: order.taxPrice },
+                { name: "Phí vận chuyển", price: order.shippingPrice },
+                { name: "Tổng", price: order.totalPrice },
               ].map(({ name, price }) => (
                 <Row key={name} className="py-1">
                   <Column align="right">{name}:</Column>
