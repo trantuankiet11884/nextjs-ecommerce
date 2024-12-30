@@ -145,3 +145,7 @@ export const formatDateTime = (dateString: Date) => {
     timeOnly: formattedTime, // Example: "15:30"
   };
 };
+
+export function formatId(id: string) {
+  return `..${id.substring(id.length - 6)}`;
+}

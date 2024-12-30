@@ -15,6 +15,8 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import useCartStore from "@/hooks/use-cart-store";
 import useIsMounted from "@/hooks/use-is-mounted";
+import { toast } from "@/hooks/use-toast";
+import { createOrder } from "@/lib/actions/order.actions";
 import {
   APP_NAME,
   AVAILABLE_DELIVERY_DATES,
@@ -32,12 +34,11 @@ import { ShippingAddress } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import CheckoutFooter from "./checkout-footer";
-import { createOrder } from "@/lib/actions/order.actions";
-import { toast } from "@/hooks/use-toast";
+
 const shippingAddressDefaultValues =
   process.env.NODE_ENV === "development"
     ? {
@@ -95,6 +96,7 @@ const CheckoutForm = () => {
     shippingAddressForm.setValue("province", shippingAddress.province);
     shippingAddressForm.setValue("phone", shippingAddress.phone);
   }, [items, isMounted, router, shippingAddress, shippingAddressForm]);
+
   const [isAddressSelected, setIsAddressSelected] = useState<boolean>(false);
   const [isPaymentMethodSelected, setIsPaymentMethodSelected] =
     useState<boolean>(false);
@@ -135,6 +137,9 @@ const CheckoutForm = () => {
   const handleSelectShippingAddress = () => {
     shippingAddressForm.handleSubmit(onSubmitShippingAddress)();
   };
+
+  if (!items) return redirect("/");
+
   const CheckoutSummary = () => (
     <Card>
       <CardContent className="p-4">
