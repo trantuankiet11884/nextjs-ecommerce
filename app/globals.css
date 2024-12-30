@@ -86,4 +86,8 @@ body {
   .h2-bold {
     @apply font-bold text-lg lg:text-3xl;
   }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
 }

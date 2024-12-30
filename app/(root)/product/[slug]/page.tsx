@@ -4,7 +4,7 @@ import AddToCart from "@/components/shared/product/add-to-cart";
 import ProductGallery from "@/components/shared/product/product-gallery";
 import ProductPrice from "@/components/shared/product/product-price";
 import ProductSlider from "@/components/shared/product/product-slider";
-import Rating from "@/components/shared/product/rating";
+import RatingSummary from "@/components/shared/product/rating-summary";
 import SelectVariant from "@/components/shared/product/select-variant";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -13,6 +13,8 @@ import {
   getRelatedProductsByCategory,
 } from "@/lib/actions/products.actions";
 import { generateId, round2 } from "@/lib/utils";
+import ReviewList from "./review-list";
+import { auth } from "@/auth";
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
 }) {
@@ -41,6 +43,8 @@ export default async function ProductDetails(props: {
     page: Number(page || "1"),
   });
 
+  const session = await auth();
+
   return (
     <div>
       <AddToBrowsingHistory id={product._id} category={product.category} />
@@ -56,9 +60,12 @@ export default async function ProductDetails(props: {
               </p>
               <h1 className="font-bold text-lg lg:text-xl">{product.name}</h1>
               <div className="flex items-center gap-2">
-                <span>{product.avgRating.toFixed(1)}</span>
-                <Rating rating={product.avgRating} />
-                <span>{product.numReviews} Đánh giá</span>
+                <RatingSummary
+                  avgRating={product.avgRating}
+                  numReviews={product.numReviews}
+                  asPopover
+                  ratingDistribution={product.ratingDistribution}
+                />
               </div>
               <Separator />
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -125,6 +132,14 @@ export default async function ProductDetails(props: {
           </div>
         </div>
       </section>
+
+      <section className="mt-10">
+        <h2 className="h2-bold mb-2" id="reviews">
+          Đánh giá
+        </h2>
+        <ReviewList product={product} userId={session?.user.id} />
+      </section>
+
       <section className="mt-10">
         <ProductSlider
           products={relatedProducts.data}

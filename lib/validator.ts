@@ -13,6 +13,19 @@ const Price = (field: string) =>
       `${field} phải có đúng hai chữ số thập phân (ví dụ: 49.99)`
     );
 
+export const ReviewInputSchema = z.object({
+  product: MongoId,
+  user: MongoId,
+  isVerifiedPurchase: z.boolean(),
+  title: z.string().min(1, "Tiêu đề là bắt buộc"),
+  comment: z.string().min(1, "Bình luận là bắt buộc"),
+  rating: z.coerce
+    .number()
+    .int()
+    .min(1, "Đánh giá ít nhất phải là 1 ")
+    .max(5, "Đánh giá tối đa phải là 5"),
+});
+
 export const ProductInputSchema = z.object({
   name: z.string().min(3, "Tên phải có ít nhất 3 ký tự"),
   slug: z.string().min(3, "Slug phải có ít nhất 3 ký tự"),
@@ -41,7 +54,7 @@ export const ProductInputSchema = z.object({
   ratingDistribution: z
     .array(z.object({ rating: z.number(), count: z.number() }))
     .max(5),
-  reviews: z.array(z.string()).default([]),
+  reviews: z.array(ReviewInputSchema).default([]),
   numSales: z.coerce
     .number()
     .int()

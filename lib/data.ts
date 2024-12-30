@@ -938,9 +938,102 @@ const products: IProductInput[] = [
   },
 ];
 
+const reviews = [
+  {
+    rating: 1,
+    title: "Chất lượng kém",
+    comment:
+      "Rất thất vọng. Sản phẩm bị hỏng sau vài lần sử dụng. Không đáng tiền.",
+  },
+  {
+    rating: 2,
+    title: "Thất vọng",
+    comment:
+      "Không như mong đợi. Chất liệu trông rẻ tiền và không vừa vặn. Sẽ không mua lại.",
+  },
+  {
+    rating: 2,
+    title: "Cần cải thiện",
+    comment:
+      "Nhìn đẹp nhưng không hoạt động như mong đợi. Sẽ không giới thiệu nếu không nâng cấp.",
+  },
+  {
+    rating: 3,
+    title: "Không tệ",
+    comment:
+      "Sản phẩm này khá ổn, chất lượng tốt nhưng cần cải thiện một số chi tiết.",
+  },
+  {
+    rating: 3,
+    title: "Ổn, nhưng chưa xuất sắc",
+    comment:
+      "Nó hoạt động, nhưng không tốt như tôi mong đợi. Chất lượng trung bình và thiếu hoàn thiện.",
+  },
+  {
+    rating: 3,
+    title: "Sản phẩm tốt",
+    comment:
+      "Sản phẩm này rất tuyệt vời, tôi rất thích! Chất lượng hàng đầu, chất liệu thoải mái và thoáng khí.",
+  },
+  {
+    rating: 4,
+    title: "Khá tốt",
+    comment:
+      "Sản phẩm chắc chắn! Giá trị tốt so với giá tiền, nhưng vẫn có thể cải thiện một chút.",
+  },
+  {
+    rating: 4,
+    title: "Rất hài lòng",
+    comment: "Sản phẩm tốt! Chất lượng cao và đáng giá. Sẽ cân nhắc mua lại.",
+  },
+  {
+    rating: 4,
+    title: "Hoàn toàn yêu thích!",
+    comment:
+      "Hoàn hảo trong mọi khía cạnh! Chất lượng, thiết kế và sự thoải mái vượt quá mong đợi của tôi.",
+  },
+  {
+    rating: 4,
+    title: "Vượt qua mong đợi!",
+    comment:
+      "Sản phẩm tuyệt vời! Chất lượng cao, cảm giác bền và hoạt động tốt. Rất khuyến khích!",
+  },
+  {
+    rating: 5,
+    title: "Mua hàng hoàn hảo!",
+    comment:
+      "Không thể hài lòng hơn với sản phẩm này. Chất lượng xuất sắc và hoạt động trơn tru!",
+  },
+  {
+    rating: 5,
+    title: "Rất khuyến khích",
+    comment:
+      "Sản phẩm tuyệt vời! Đáng từng đồng, thiết kế đẹp và cảm giác cao cấp. Tôi rất hài lòng.",
+  },
+  {
+    rating: 5,
+    title: "Đúng như tôi cần",
+    comment:
+      "Chính xác như mô tả! Chất lượng vượt xa mong đợi và giao hàng nhanh chóng.",
+  },
+  {
+    rating: 5,
+    title: "Lựa chọn xuất sắc!",
+    comment:
+      "Sản phẩm này thật tuyệt vời! Tất cả mọi thứ từ chất liệu đến chức năng đều cao cấp.",
+  },
+  {
+    rating: 5,
+    title: "Không thể đòi hỏi hơn!",
+    comment:
+      "Tôi rất yêu thích sản phẩm này! Nó bền, phong cách và hoạt động tuyệt vời. Sẽ mua lại mà không do dự.",
+  },
+];
+
 const data: Data = {
   users,
   products,
+  reviews,
   headerMenus: [
     {
       name: "Khuyến mãi hôm nay",
