@@ -1,6 +1,10 @@
 import { z } from "zod";
 import { formatNumberWithDecimal } from "./utils";
 
+const MongoId = z
+  .string()
+  .regex(/^[0-9a-fA-F]{24}$/, { message: "Invalid MongoDB ID" });
+
 const Price = (field: string) =>
   z.coerce
     .number()
@@ -69,6 +73,43 @@ export const ShippingAddressSchema = z.object({
   province: z.string().min(1, "Tỉnh/Thành phố là bắt buộc"),
   phone: z.string().min(1, "Số điện thoại là bắt buộc"),
   country: z.string().min(1, "Quốc gia là bắt buộc"),
+});
+
+export const OrderInputSchema = z.object({
+  user: z.union([
+    MongoId,
+    z.object({
+      name: z.string(),
+      email: z.string().email(),
+    }),
+  ]),
+  items: z
+    .array(OrderItemSchema)
+    .min(1, "Đơn hàng phải chứa ít nhất một sản phẩm"),
+  shippingAddress: ShippingAddressSchema,
+  paymentMethod: z.string().min(1, "Phương thức thanh toán là bắt buộc"),
+  paymentResult: z
+    .object({
+      id: z.string(),
+      status: z.string(),
+      email_address: z.string(),
+      pricePaid: z.string(),
+    })
+    .optional(),
+  itemsPrice: Price("Items price"),
+  shippingPrice: Price("Shipping price"),
+  taxPrice: Price("Tax price"),
+  totalPrice: Price("Total price"),
+  expectedDeliveryDate: z
+    .date()
+    .refine(
+      (value) => value > new Date(),
+      "Ngày giao hàng dự kiến phải ở tương lai"
+    ),
+  isDelivered: z.boolean().default(false),
+  deliveredAt: z.date().optional(),
+  isPaid: z.boolean().default(false),
+  paidAt: z.date().optional(),
 });
 
 export const CartSchema = z.object({
