@@ -5,6 +5,9 @@ export const APP_SLOGAN = process.env.NEXT_PUBLIC_APP_SLOGAN || "Next.js";
 
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 
+export const FREE_SHIPPING_MIN_PRICE = Number(
+  process.env.FREE_SHIPPING_MIN_PRICE || 35
+);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const colorTranslations: any = {
   Red: "Đỏ",

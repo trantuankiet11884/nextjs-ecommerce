@@ -43,3 +43,33 @@ export const ProductInputSchema = z.object({
     .int()
     .nonnegative("Số lượng bán phải là một số không âm"),
 });
+
+export const OrderItemSchema = z.object({
+  clientId: z.string().min(1, "clientId là bắt buộc"),
+  product: z.string().min(1, "Sản phẩm là bắt buộc"),
+  name: z.string().min(1, "Tên là bắt buộc"),
+  slug: z.string().min(1, "Slug là bắt buộc"),
+  category: z.string().min(1, "Danh mục là bắt buộc"),
+  quantity: z.number().int().nonnegative("Số lượng phải là một số không âm"),
+  countInStock: z
+    .number()
+    .int()
+    .nonnegative("Số lượng phải là một số không âm"),
+  image: z.string().min(1, "Hình ảnh là bắt buộc"),
+  price: Price("Giá"),
+  size: z.string().optional(),
+  color: z.string().optional(),
+});
+
+export const CartSchema = z.object({
+  items: z
+    .array(OrderItemSchema)
+    .min(1, "Đơn hàng phải có ít nhất một sản phẩm"),
+  itemsPrice: z.number(),
+  taxPrice: z.optional(z.number()),
+  shippingPrice: z.optional(z.number()),
+  totalPrice: z.number(),
+  paymentMethod: z.optional(z.string()),
+  deliveryDateIndex: z.optional(z.number()),
+  expectedDeliveryDate: z.optional(z.date()),
+});
