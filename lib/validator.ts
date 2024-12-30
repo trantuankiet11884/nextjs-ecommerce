@@ -73,3 +73,38 @@ export const CartSchema = z.object({
   deliveryDateIndex: z.optional(z.number()),
   expectedDeliveryDate: z.optional(z.date()),
 });
+
+const UserName = z
+  .string()
+  .min(2, { message: "Tên người dùng phải có ít nhất 2 ký tự" })
+  .max(50, { message: "Tên người dùng phải có tối đa 30 ký tự" });
+const Email = z
+  .string()
+  .min(1, "Email là bắt buộc")
+  .email("Email không hợp lệ");
+const Password = z.string().min(3, "Mật khẩu phải có ít nhất 3 ký tự");
+const UserRole = z.string().min(1, "Vai trò là bắt buộc");
+
+export const UserInputSchema = z.object({
+  name: UserName,
+  email: Email,
+  image: z.string().optional(),
+  emailVerified: z.boolean(),
+  role: UserRole,
+  password: Password,
+  paymentMethod: z.string().min(1, "Phương thức thanh toán là bắt buộc"),
+  address: z.object({
+    fullName: z.string().min(1, "Họ và tên là bắt buộc"),
+    street: z.string().min(1, "Tên đường là bắt buộc"),
+    city: z.string().min(1, "Thành phố là bắt buộc"),
+    province: z.string().min(1, "Tỉnh là bắt buộc"),
+    postalCode: z.string().min(1, "Mã bưu chính là bắt buộc"),
+    country: z.string().min(1, "Quốc gia là bắt buộc"),
+    phone: z.string().min(1, "Số điện thoại là bắt buộc"),
+  }),
+});
+
+export const UserSignInSchema = z.object({
+  email: Email,
+  password: Password,
+});
