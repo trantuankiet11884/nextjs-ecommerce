@@ -16,3 +16,25 @@ export const toSlug = (text: string): string =>
     .replace(/[^\w\s-]+/g, "")
     .replace(/\s+/g, "-")
     .replace(/^-+|-+$/g, "");
+
+const CURRENCY_FORMATTER = new Intl.NumberFormat("vi-VN", {
+  currency: "VND",
+  style: "currency",
+  minimumFractionDigits: 3,
+});
+
+export function formatCurrency(amount: number | string) {
+  const numericAmount =
+    typeof amount === "string" ? parseFloat(amount) : amount;
+
+  if (isNaN(numericAmount)) {
+    throw new Error("Invalid amount value");
+  }
+
+  return CURRENCY_FORMATTER.format(numericAmount);
+}
+
+const NUMBER_FORMATTER = new Intl.NumberFormat("vi-VN");
+export function formatNumber(number: number) {
+  return NUMBER_FORMATTER.format(number);
+}
