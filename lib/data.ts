@@ -4,10 +4,10 @@ import { toSlug } from "./utils";
 const products: IProductInput[] = [
   {
     name: "Áo Thun Dài Tay Slim-fit Nam Nike",
-    slug: toSlug("Áo Thun Dài Tay Slim-fit Nam Nike"),
-    category: "Áo Thun",
+    slug: toSlug("Nike Mens Slim-fit Long-Sleeve T-Shirt"),
+    category: "T-Shirts",
     images: ["/images/p11-1.jpg", "/images/p11-2.jpg"],
-    tags: ["Sản phẩm mới"],
+    tags: ["new-arrival"],
     isPublished: true,
     price: 21.8,
     listPrice: 0,
@@ -31,15 +31,15 @@ const products: IProductInput[] = [
   },
   {
     name: "Áo Thun Dài Tay Jerzees Chất Liệu Nặng",
-    slug: toSlug("Áo Thun Dài Tay Jerzees Chất Liệu Nặng"),
-    category: "Áo Thun",
+    slug: toSlug("Jerzees Long-Sleeve Heavyweight Blend T-Shirt"),
+    category: "T-Shirts",
     images: [
       "/images/p12-1.jpg",
       "/images/p12-2.jpg",
       "/images/p12-3.jpg",
       "/images/p12-4.jpg",
     ],
-    tags: ["Nổi bật"],
+    tags: ["featured"],
     isPublished: true,
     price: 23.78,
     listPrice: 0,
@@ -63,11 +63,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Áo Thun Dài Tay Nam Jerzees",
-    slug: toSlug("Áo Thun Dài Tay Nam Jerzees"),
-    category: "Áo Thun",
+    slug: toSlug("Jerzees Men Long-Sleeve T-Shirt"),
+    category: "T-Shirts",
     brand: "Jerzees",
     images: ["/images/p13-1.jpg", "/images/p13-2.jpg"],
-    tags: ["Bán chạy nhất"],
+    tags: ["best-seller"],
     isPublished: true,
     price: 13.86,
     listPrice: 16.03,
@@ -91,12 +91,12 @@ const products: IProductInput[] = [
   {
     name: "Áo Thun Dài Tay Nam Decrum - Áo V-Cổ Thời Trang Mềm Mại, Áo Jersey Tay Dài",
     slug: toSlug(
-      "Áo Thun Dài Tay Nam Decrum - Áo V-Cổ Thời Trang Mềm Mại, Áo Jersey Tay Dài"
+      "Decrum Mens Plain Long Sleeve T-Shirt - Comfortable Soft Fashion V Neck Full Sleeves Jersey Shirts"
     ),
-    category: "Áo Thun",
+    category: "T-Shirts",
     brand: "Jerzees",
     images: ["/images/p14-1.jpg", "/images/p14-2.jpg"],
-    tags: ["Khuyến mãi hôm nay"],
+    tags: ["todays-deal"],
     isPublished: true,
     price: 26.95,
     listPrice: 46.03,
@@ -120,12 +120,12 @@ const products: IProductInput[] = [
   {
     name: "Áo Thun Nam Muscle Cmdr Slim Fit Henley Dài & Ngắn Tay, Cổ Áo 3 Nút Kim Loại, Áo Thun Thời Trang",
     slug: toSlug(
-      "Áo Thun Nam Muscle Cmdr Slim Fit Henley Dài & Ngắn Tay, Cổ Áo 3 Nút Kim Loại, Áo Thun Thời Trang"
+      "Muscle Cmdr Men's Slim Fit Henley Shirt Long&Short Business Sleeve Casual 3 Metal Buton Placket Casual Stylish T-Shirt"
     ),
-    category: "Áo Thun",
-    brand: "Muscle Cmdr",
+    category: "T-Shirts",
+    brand: " Muscle Cmdr",
     images: ["/images/p15-1.jpg", "/images/p15-2.jpg"],
-    tags: ["Mới về", "Nổi bật"],
+    tags: ["new-arrival", "featured"],
     isPublished: true,
     price: 29.99,
     listPrice: 35.99,
@@ -148,11 +148,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Áo Thun Dài Tay Nam Hanes Beefy Henley",
-    slug: toSlug("Áo Thun Dài Tay Nam Hanes Beefy Henley"),
-    category: "Áo Thun",
+    slug: toSlug("Hanes Mens Long Sleeve Beefy Henley Shirt"),
+    category: "T-Shirts",
     brand: "Jerzees",
     images: ["/images/p16-1.jpg", "/images/p16-2.jpg"],
-    tags: ["Bán chạy nhất", "Khuyến mãi hôm nay"],
+    tags: ["best-seller", "todays-deal"],
     isPublished: true,
     price: 25.3,
     listPrice: 32.99,
@@ -175,11 +175,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Quần Jean Nam Silver Jeans Co. Jace Slim Fit Bootcut",
-    slug: toSlug("Quần Jean Nam Silver Jeans Co. Jace Slim Fit Bootcut"),
-    category: "Quần Jean",
+    slug: toSlug("Silver Jeans Co. Mens Jace Slim Fit Bootcut Jeans"),
+    category: "Jeans",
     brand: "Silver Jeans Co",
     images: ["/images/p21-1.jpg", "/images/p21-2.jpg"],
-    tags: ["Mới về"],
+    tags: ["new-arrival"],
     isPublished: true,
     price: 95.34,
     listPrice: 0,
@@ -203,12 +203,12 @@ const products: IProductInput[] = [
   {
     name: "Quần Jean Nam Levi's 505 Regular Fit (Cũng có sẵn cho Big & Tall)",
     slug: toSlug(
-      "Quần Jean Nam Levi's 505 Regular Fit (Cũng có sẵn cho Big & Tall)"
+      "Levi's mens 505 Regular Fit Jeans (Also Available in Big & Tall)"
     ),
-    category: "Quần Jean",
+    category: "Jeans",
     brand: "Levi's",
     images: ["/images/p22-1.jpg", "/images/p22-2.jpg"],
-    tags: ["Nổi bật"],
+    tags: ["featured"],
     isPublished: true,
     price: 59.99,
     listPrice: 69.99,
@@ -231,11 +231,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Quần Jean Nam Essentials Straight-Fit Stretch",
-    slug: toSlug("Quần Jean Nam Essentials Straight-Fit Stretch"),
-    category: "Quần Jean",
+    slug: toSlug("Essentials Mens Straight-Fit Stretch Jean"),
+    category: "Jeans",
     brand: "Essentials",
     images: ["/images/p23-1.jpg", "/images/p23-2.jpg"],
-    tags: ["Bán chạy nhất"],
+    tags: ["best-seller"],
     isPublished: true,
     price: 38.9,
     listPrice: 45,
@@ -258,11 +258,13 @@ const products: IProductInput[] = [
   },
   {
     name: "Quần Jean Nam Buffalo David Bitton Driven Relaxed Denim",
-    slug: toSlug("Quần Jean Nam Buffalo David Bitton Driven Relaxed Denim"),
-    category: "Quần Jean",
+    slug: toSlug(
+      "Buffalo David Bitton Mens Men's Driven Relaxed Denim JeansJeans"
+    ),
+    category: "Jeans",
     brand: "Buffalo David Bitton",
     images: ["/images/p24-1.jpg", "/images/p24-2.jpg"],
-    tags: ["Khuyến mãi hôm nay"],
+    tags: ["todays-deal"],
     isPublished: true,
     price: 69.99,
     listPrice: 100,
@@ -285,11 +287,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Quần Jean Nam Dickies Relaxed Fit Carpenter",
-    slug: toSlug("Quần Jean Nam Dickies Relaxed Fit Carpenter"),
-    category: "Quần Jean",
+    slug: toSlug("Dickies Mens Relaxed Fit Carpenter Jean"),
+    category: "Jeans",
     brand: "Dickies",
     images: ["/images/p25-1.jpg", "/images/p25-2.jpg"],
-    tags: ["Hàng mới", "Nổi bật"],
+    tags: ["new-arrival", "featured"],
     isPublished: true,
     price: 95.34,
     listPrice: 0,
@@ -312,13 +314,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Quần Jean Nam Wrangler Premium Performance Cowboy Cut Slim Fit",
-    slug: toSlug(
-      "Quần Jean Nam Wrangler Premium Performance Cowboy Cut Slim Fit"
-    ),
-    category: "Quần Jean",
+    slug: toSlug("Wrangler mens Premium Performance Cowboy Cut Slim Fit Jean"),
+    category: "Jeans",
     brand: "Wrangler",
     images: ["/images/p26-1.jpg", "/images/p26-2.jpg"],
-    tags: ["Bán chạy nhất", "khuyến mãi hôm nay"],
+    tags: ["best-seller", "todays-deal"],
     isPublished: true,
     price: 81.78,
     listPrice: 149.99,
@@ -341,11 +341,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Đồng hồ nam Seiko với mặt đồng hồ đen",
-    slug: toSlug("Đồng hồ nam Seiko với mặt đồng hồ đen"),
-    category: "Đồng hồ đeo tay",
+    slug: toSlug("Seiko Men's Analogue Watch with Black Dial"),
+    category: "Wrist Watches",
     brand: "Seiko",
     images: ["/images/p31-1.jpg", "/images/p31-2.jpg"],
-    tags: ["Sản phẩm mới"],
+    tags: ["new-arrival"],
     isPublished: true,
     price: 530.0,
     listPrice: 0,
@@ -369,12 +369,12 @@ const products: IProductInput[] = [
   {
     name: "Đồng hồ tự động SEIKO 5 Sport SRPJ83 mặt số màu be, dây nylon, màu be",
     slug: toSlug(
-      "Đồng hồ tự động SEIKO 5 Sport SRPJ83 mặt số màu be, dây nylon, màu be"
+      "SEIKO 5 Sport SRPJ83 Beige Dial Nylon Automatic Watch, Beige, Automatic Watch"
     ),
-    category: "Đồng hồ đeo tay",
+    category: "Wrist Watches",
     brand: "Seiko",
     images: ["/images/p32-1.jpg", "/images/p32-2.jpg"],
-    tags: ["Nổi bật"],
+    tags: ["featured"],
     isPublished: true,
     price: 375.83,
     listPrice: 400,
@@ -398,12 +398,12 @@ const products: IProductInput[] = [
   {
     name: "Đồng hồ Casio nam mặt kim loại thép không gỉ dây đeo, màu bạc, đồng hồ thể thao 42mm",
     slug: toSlug(
-      "Đồng hồ Casio nam mặt kim loại thép không gỉ dây đeo, màu bạc, đồng hồ thể thao 42mm"
+      "Casio Men's Heavy Duty Analog Quartz Stainless Steel Strap, Silver, 42 Casual Watch"
     ),
-    category: "Đồng hồ đeo tay",
+    category: "Wrist Watches",
     brand: "Casio",
     images: ["/images/p33-1.jpg", "/images/p33-2.jpg"],
-    tags: ["Bán chạy nhất"],
+    tags: ["best-seller"],
     isPublished: true,
     price: 60.78,
     listPrice: 0,
@@ -427,12 +427,12 @@ const products: IProductInput[] = [
   {
     name: "Đồng hồ Casio cổ điển vỏ thép không gỉ màu bạc, đồng hồ chỉ ngày",
     slug: toSlug(
-      "Đồng hồ Casio cổ điển vỏ thép không gỉ màu bạc, đồng hồ chỉ ngày"
+      "Casio Classic Silver-Tone Stainless Steel Band Date Indicator Watch"
     ),
-    category: "Đồng hồ đeo tay",
+    category: "Wrist Watches",
     brand: "Casio",
     images: ["/images/p34-1.jpg", "/images/p34-2.jpg"],
-    tags: ["Khuyến mãi hôm nay"],
+    tags: ["todays-deal"],
     isPublished: true,
     price: 34.22,
     listPrice: 54.99,
@@ -455,13 +455,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Đồng hồ Fossil nam Grant vỏ thép không gỉ, đồng hồ chronograph",
-    slug: toSlug(
-      "Đồng hồ Fossil nam Grant vỏ thép không gỉ, đồng hồ chronograph"
-    ),
-    category: "Đồng hồ đeo tay",
+    slug: toSlug("Fossil Men's Grant Stainless Steel Quartz Chronograph Watch"),
+    category: "Wrist Watches",
     brand: "Fossil",
     images: ["/images/p35-1.jpg", "/images/p35-2.jpg"],
-    tags: ["Sản phẩm mới", "Nổi bật"],
+    tags: ["new-arrival", "featured"],
     isPublished: true,
     price: 171.22,
     listPrice: 225,
@@ -484,11 +482,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Đồng hồ Fossil nam Machine vỏ thép không gỉ, đồng hồ quartz",
-    slug: toSlug("Đồng hồ Fossil nam Machine vỏ thép không gỉ, đồng hồ quartz"),
-    category: "Đồng hồ đeo tay",
+    slug: toSlug("Fossil Men's Machine Stainless Steel Quartz Watch"),
+    category: "Wrist Watches",
     brand: "Fossil",
     images: ["/images/p36-1.jpg", "/images/p36-2.jpg"],
-    tags: ["Bán chạy nhất", "Khuyến mãi hôm nay"],
+    tags: ["best-seller", "todays-deal"],
     isPublished: true,
     price: 158.21,
     listPrice: 229.0,
@@ -511,11 +509,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Giày đào tạo nam adidas Grand Court 2.0",
-    slug: toSlug("Giày đào tạo nam adidas Grand Court 2.0"),
-    category: "Giày",
+    slug: toSlug("adidas Mens Grand Court 2.0 Training Shoes Training Shoes"),
+    category: "Shoes",
     brand: "adidas",
     images: ["/images/p41-1.jpg", "/images/p41-2.jpg"],
-    tags: ["Hàng mới"],
+    tags: ["new-arrival"],
     isPublished: true,
     price: 81.99,
     listPrice: 0,
@@ -539,12 +537,12 @@ const products: IProductInput[] = [
   {
     name: "Giày chạy bộ nam ziitop, giày thể thao thời trang, giày oxford công sở, giày thể thao nhẹ, thoáng khí",
     slug: toSlug(
-      "Giày chạy bộ nam ziitop, giày thể thao thời trang, giày oxford công sở, giày thể thao nhẹ, thoáng khí"
+      "ziitop Men's Running Walking Shoes Fashion Sneakers Mesh Dress Shoes Business Oxfords Shoes Lightweight Casual Breathable Work Formal Shoes"
     ),
-    category: "Giày",
+    category: "Shoes",
     brand: "ziitop",
     images: ["/images/p42-1.jpg", "/images/p42-2.jpg"],
-    tags: ["Nổi bật"],
+    tags: ["featured"],
     isPublished: true,
     price: 39.97,
     listPrice: 49.96,
@@ -567,11 +565,13 @@ const products: IProductInput[] = [
   },
   {
     name: "Giày nam Skechers Summits High Range Hands Free Slip-in",
-    slug: toSlug("Giày nam Skechers Summits High Range Hands Free Slip-in"),
-    category: "Giày",
+    slug: toSlug(
+      "Skechers mens Summits High Range Hands Free Slip-in Shoes Work shoe"
+    ),
+    category: "Shoes",
     brand: "Skechers",
     images: ["/images/p43-1.jpg", "/images/p43-2.jpg"],
-    tags: ["Bán chạy nhất"],
+    tags: ["best-seller"],
     isPublished: true,
     price: 99.99,
     listPrice: 0,
@@ -595,12 +595,12 @@ const products: IProductInput[] = [
   {
     name: "Giày chạy bộ DLWKIPV nam, giày thể thao, giày đi bộ ngoài trời, giày chạy nhẹ, linh hoạt, thoải mái, thoáng khí",
     slug: toSlug(
-      "Giày chạy bộ DLWKIPV nam, giày thể thao, giày đi bộ ngoài trời, giày chạy nhẹ, linh hoạt, thoải mái, thoáng khí"
+      "DLWKIPV Mens Running Shoes Tennis Cross Training Sneakers Fashion Non Slip Outdoor Walking Jogging Shoes Mesh Light Flexible Comfortable Breathable Shoes"
     ),
-    category: "Giày",
+    category: "Shoes",
     brand: "DLWKIPV",
     images: ["/images/p44-1.jpg", "/images/p44-2.jpg"],
-    tags: ["Ưu đãi hôm nay"],
+    tags: ["todays-deal"],
     isPublished: true,
     price: 36.99,
     listPrice: 56.9,
@@ -623,11 +623,11 @@ const products: IProductInput[] = [
   },
   {
     name: "Giày chạy bộ nam ASICS GT-2000 13",
-    slug: toSlug("Giày chạy bộ nam ASICS GT-2000 13"),
-    category: "Giày",
+    slug: toSlug("ASICS Men's GT-2000 13 Running Shoes"),
+    category: "Shoes",
     brand: "ASICS",
     images: ["/images/p45-1.jpg", "/images/p45-2.jpg"],
-    tags: ["Hàng mới", "Nổi bật"],
+    tags: ["new-arrival", "featured"],
     isPublished: true,
     price: 179.95,
     listPrice: 200,
@@ -651,12 +651,12 @@ const products: IProductInput[] = [
   {
     name: "Giày Wearbreeze nam, Urban - Giày siêu thoải mái, Giày Mesh thời trang cho nam",
     slug: toSlug(
-      "Giày Wearbreeze nam, Urban - Giày siêu thoải mái, Giày Mesh thời trang cho nam"
+      "Mens Wearbreeze Shoes, Urban - Ultra Comfortable Shoes, Breeze Shoes for Men, Men's Mesh Dress Sneakers Business Shoes"
     ),
-    category: "Giày",
+    category: "Shoes",
     brand: "Generic",
     images: ["/images/p46-1.jpg", "/images/p46-2.jpg"],
-    tags: ["Bán chạy nhất", "Ưu đãi hôm nay"],
+    tags: ["best-seller", "todays-deal"],
     isPublished: true,
     price: 32.99,
     listPrice: 80,
