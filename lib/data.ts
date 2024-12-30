@@ -26,7 +26,7 @@ const products: IProductInput[] = [
     description:
       "Được làm từ các hóa chất an toàn hơn cho sức khỏe con người và môi trường",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Xanh", "Đỏ", "Đen"],
+    colors: ["Blue", "Red", "Black"],
     reviews: [],
   },
   {
@@ -58,7 +58,7 @@ const products: IProductInput[] = [
     description:
       "Làm từ bông trồng ở Mỹ có nguồn gốc bền vững; Dây đeo vai đến vai; Cổ áo may đôi chỉ; Tay áo may liền; Cổ tay áo có đường may ẩn; Thân áo liền mạch cho diện tích in rộng",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Vàng", "Đỏ", "Đen"],
+    colors: ["Yellow", "Red", "Black"],
     reviews: [],
   },
   {
@@ -85,7 +85,7 @@ const products: IProductInput[] = [
     description:
       "Áo thun dài tay Jerzees được làm với công nghệ Dri-Power giúp hút ẩm, giữ bạn mát mẻ và khô ráo suốt cả ngày. Chúng tôi cũng bổ sung cổ áo và tay áo dệt kim để tăng độ bền, cùng với cổ áo phẳng cho sự thoải mái. Nếu bạn đang tìm kiếm một chiếc áo đa năng có thể mặc trong suốt các mùa chuyển tiếp, thì đây chính là lựa chọn hoàn hảo.",
     sizes: ["XL", "XXL"],
-    colors: ["Xanh", "Trắng"],
+    colors: ["Blue", "White"],
     reviews: [],
   },
   {
@@ -114,7 +114,7 @@ const products: IProductInput[] = [
     description:
       "Nâng cấp trang phục của bạn với chiếc áo thun dài tay mềm mại này. Áo tay dài này là sự nâng cấp tuyệt vời từ chiếc áo thun cotton thông thường.",
     sizes: ["XL", "XXL"],
-    colors: ["Vàng", "Trắng"],
+    colors: ["Yellow", "White"],
     reviews: [],
   },
   {
@@ -143,7 +143,7 @@ const products: IProductInput[] = [
     description:
       "Thiết kế Slim Fit: Áo Henley Slim Fit của Muscle Cmdr được thiết kế ôm sát cơ thể, làm nổi bật cơ bắp và tạo dáng hình thanh thoát, hoàn hảo cho mọi dịp.",
     sizes: ["XL", "XXL"],
-    colors: ["Xanh", "Vàng"],
+    colors: ["Blue", "Yellow"],
     reviews: [],
   },
   {
@@ -170,7 +170,7 @@ const products: IProductInput[] = [
     description:
       "Vải cotton dày (Heathers là 60% cotton/40% polyester; Pebblestone là 75% cotton/25% polyester)",
     sizes: ["XL", "XXL"],
-    colors: ["Xám", "Trắng"],
+    colors: ["Grey", "White"],
     reviews: [],
   },
   {
@@ -197,7 +197,7 @@ const products: IProductInput[] = [
     description:
       "Quần Jean Nam Silver Jeans Co. Jace Slim Fit Bootcut - Quần Jace là một mẫu quần jean hiện đại dành cho cao bồi. Quần ngồi dưới eo, ôm sát qua hông và đùi. Được hoàn thiện với phần ống quần bootcut dài 18 inch, phù hợp với dáng người thon gọn nhưng vẫn vừa vặn với ủng.",
     sizes: ["30Wx30L", "34Wx30L", "36Wx30L"],
-    colors: ["Xanh", "Xám"],
+    colors: ["Blue", "Grey"],
     reviews: [],
   },
   {
@@ -226,7 +226,7 @@ const products: IProductInput[] = [
     description:
       "Một chiếc quần cổ điển thực sự, 505 được thiết kế để có vẻ ngoài và phong cách thoải mái.",
     sizes: ["30Wx30L", "34Wx30L", "36Wx30L"],
-    colors: ["Xanh", "Xám"],
+    colors: ["Blue", "Grey"],
     reviews: [],
   },
   {
@@ -253,7 +253,7 @@ const products: IProductInput[] = [
     description:
       "Những chiếc quần jean 5 túi cổ điển này được làm từ vải có chút độ co giãn để mang lại sự thoải mái và giúp duy trì hình dáng của chúng.",
     sizes: ["30Wx30L", "34Wx30L", "36Wx30L"],
-    colors: ["Xám", "Xanh"],
+    colors: ["Grey", "Blue"],
     reviews: [],
   },
   {
@@ -282,7 +282,7 @@ const products: IProductInput[] = [
     description:
       "Quần jean denim tái chế co giãn với màu xanh wash tự nhiên và được mài. Đặc điểm gồm thắt lưng thấp thoải mái và kiểu dáng suông. Vẻ ngoài mài mòn mang lại cảm giác đã sử dụng lâu dài. Logo thân thiện với môi trường màu nâu đỏ được gắn ở thắt lưng phía sau. Hình ảnh lá phong đặc trưng được đục nổi ở khóa kéo.",
     sizes: ["30Wx30L", "34Wx30L", "36Wx30L"],
-    colors: ["Xanh", "Xám"],
+    colors: ["Blue", "Grey"],
     reviews: [],
   },
   {
@@ -309,7 +309,7 @@ const products: IProductInput[] = [
     description:
       "Quần jean làm việc thoải mái với các túi kiểu thợ mộc truyền thống và logo ở túi sau.",
     sizes: ["30Wx30L", "34Wx30L", "36Wx30L"],
-    colors: ["Xanh", "Xám"],
+    colors: ["Blue", "Grey"],
     reviews: [],
   },
   {
@@ -336,7 +336,7 @@ const products: IProductInput[] = [
     description:
       "Được thiết kế với độ vừa vặn chức năng, chiếc quần này được làm để mặc cùng với đôi bốt yêu thích của bạn. Được cấu tạo với dáng ôm vừa vặn ở eo, mông và đùi, chiếc quần này mang lại sự thoải mái và chức năng cho những ngày dài trên yên ngựa.",
     sizes: ["30Wx30L", "34Wx30L", "36Wx30L"],
-    colors: ["Xanh", "Xám"],
+    colors: ["Blue", "Grey"],
     reviews: [],
   },
   {
@@ -477,7 +477,7 @@ const products: IProductInput[] = [
     description:
       "Đồng hồ chronograph với vỏ màu bạc và xanh, mặt đồng hồ màu xanh ánh kim và chỉ số số La Mã màu bạc.",
     sizes: [],
-    colors: ["Xanh", "Đen", "Bạc"],
+    colors: ["Blue", "Black", "Sivler"],
     reviews: [],
   },
   {
@@ -504,7 +504,7 @@ const products: IProductInput[] = [
     description:
       "Với phong cách nam tính màu đen trên đen, đồng hồ Machine lấy cảm hứng từ công nghiệp sẽ tạo thêm điểm nhấn hiện đại cho vẻ ngoài giản dị của bạn. Đồng hồ này còn có chuyển động ba kim trên dây đeo thép không gỉ.",
     sizes: [],
-    colors: ["Nâu", "Bạc", "Đen"],
+    colors: ["Brown", "Silver", "Black"],
     reviews: [],
   },
   {
@@ -531,7 +531,7 @@ const products: IProductInput[] = [
     description:
       "Lót giày Cloudfoam Comfort cực kỳ mềm mại và bồng bềnh, với hai lớp đệm được phủ bởi lưới mềm, thoáng khí",
     sizes: ["8", "9", "10"],
-    colors: ["Trắng", "Đen", "Xám"],
+    colors: ["White", "Black", "Grey"],
     reviews: [],
   },
   {
@@ -560,7 +560,7 @@ const products: IProductInput[] = [
     description:
       "Lót giày Cloudfoam Comfort cực kỳ mềm mại và bồng bềnh, với hai lớp đệm được phủ bởi lưới mềm, thoáng khí",
     sizes: ["8", "9", "10"],
-    colors: ["Beige", "Đen", "Xám"],
+    colors: ["Beige", "Black", "Grey"],
     reviews: [],
   },
   {
@@ -589,7 +589,7 @@ const products: IProductInput[] = [
     description:
       "Bước vào sự thoải mái dễ dàng với Skechers Hands Free Slip-ins™: Summits - High Range. Cùng với Exclusive Heel Pillow™ giúp giữ chân bạn chắc chắn, kiểu dáng này có phần gót giày mô phỏng nổi Skechers Slip-ins™ và lớp vải lưới trên cùng với dây giày cố định",
     sizes: ["8", "9", "10"],
-    colors: ["Xanh biển", "Đen", "Xám"],
+    colors: ["Blue", "Black", "Gray"],
     reviews: [],
   },
   {
@@ -618,7 +618,7 @@ const products: IProductInput[] = [
     description:
       "Thiết kế: Lưới phía trên, thông thoáng. Đế chống trượt, giảm chấn và chống trượt. Bên trong giày rộng và mềm, mang đến cảm giác thoải mái",
     sizes: ["8", "9", "10", "11", "12"],
-    colors: ["Nâu", "Đen", "Xám"],
+    colors: ["Brown", "Grey", "Black"],
     reviews: [],
   },
   {
@@ -645,7 +645,7 @@ const products: IProductInput[] = [
     description:
       "Ít nhất 50% vật liệu chính của giày được làm từ nguyên liệu tái chế để giảm lãng phí và khí thải carbon",
     sizes: ["8", "9", "10", "11"],
-    colors: ["Xanh dương", "Đen", "Xám"],
+    colors: ["Blue", "Black", "Grey"],
     reviews: [],
   },
   {
@@ -674,7 +674,7 @@ const products: IProductInput[] = [
     description:
       "Lót giày Cloudfoam Comfort cực kỳ mềm mại và bồng bềnh, với hai lớp đệm được phủ bởi lưới mềm, thoáng khí",
     sizes: ["8", "9", "10", "11"],
-    colors: ["Xanh lá", "Đen", "Xám"],
+    colors: ["Green", "Black", "Grey"],
     reviews: [],
   },
 ];
