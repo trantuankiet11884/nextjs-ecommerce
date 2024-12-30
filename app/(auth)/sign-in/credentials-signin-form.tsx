@@ -19,6 +19,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { UserSignInSchema } from "@/lib/validator";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { APP_NAME } from "@/lib/constants";
+import { useState } from "react";
+import { EyeIcon, EyeOff } from "lucide-react";
+
 const signInDefaultValues =
   process.env.NODE_ENV === "development"
     ? {
@@ -29,14 +32,19 @@ const signInDefaultValues =
         email: "",
         password: "",
       };
+
 export default function CredentialsSignInForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
   const form = useForm<IUserSignIn>({
     resolver: zodResolver(UserSignInSchema),
     defaultValues: signInDefaultValues,
   });
+
   const { control, handleSubmit } = form;
+
   const onSubmit = async (data: IUserSignIn) => {
     try {
       await signInWithCredentials({
@@ -56,6 +64,7 @@ export default function CredentialsSignInForm() {
       });
     }
   };
+
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -68,7 +77,7 @@ export default function CredentialsSignInForm() {
               <FormItem className="w-full">
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Nhập email" {...field} />
+                  <Input type="email" placeholder="Nhập email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -81,11 +90,26 @@ export default function CredentialsSignInForm() {
               <FormItem className="w-full">
                 <FormLabel>Mật khẩu</FormLabel>
                 <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="Nhập mật khẩu"
-                    {...field}
-                  />
+                  <div className="relative">
+                    <Input
+                      type={passwordVisible ? "text" : "password"}
+                      placeholder="Nhập mật khẩu"
+                      {...field}
+                    />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                      onClick={() => setPasswordVisible(!passwordVisible)}
+                    >
+                      {passwordVisible ? (
+                        <EyeOff className="h-4 w-4" />
+                      ) : (
+                        <EyeIcon className="h-4 w-4" />
+                      )}
+                    </Button>
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -98,9 +122,20 @@ export default function CredentialsSignInForm() {
           </div>
           <div className="text-sm">
             Bằng việc đăng nhập, bạn đồng ý với{" "}
-            <Link href="/page/conditions-of-use">Điều khoản sử dụng</Link> và{" "}
-            <Link href="/page/privacy-policy">Chính sách bảo mật</Link> của{" "}
-            {APP_NAME}.
+            <Link
+              href="/page/conditions-of-use"
+              className="text-primary hover:underline"
+            >
+              Điều khoản sử dụng
+            </Link>{" "}
+            và{" "}
+            <Link
+              href="/page/privacy-policy"
+              className="text-primary hover:underline"
+            >
+              Chính sách bảo mật
+            </Link>{" "}
+            của {APP_NAME}.
           </div>
         </div>
       </form>

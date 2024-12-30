@@ -20,7 +20,9 @@ export default async function UserButton() {
         <DropdownMenuTrigger className="header-button" asChild>
           <div className="flex items-center">
             <div className="flex flex-col text-xs text-left">
-              <span>Hello, {session ? session.user.name : "Đăng nhập"}</span>
+              <span>
+                Hello, {session ? session.user.name : "bạn chưa đăng nhập?"}
+              </span>
             </div>
             <ChevronDown />
           </div>
@@ -75,7 +77,15 @@ export default async function UserButton() {
             </DropdownMenuGroup>
             <DropdownMenuLabel>
               <div className="font-normal">
-                <Link href="/sign-up">Đăng ký</Link>
+                <Link
+                  href="/sign-up"
+                  className={cn(
+                    buttonVariants({ variant: "destructive" }),
+                    "w-full"
+                  )}
+                >
+                  Đăng ký
+                </Link>
               </div>
             </DropdownMenuLabel>
           </DropdownMenuContent>
