@@ -24,7 +24,9 @@ const ProductPrice = ({
   return plain ? (
     formatCurrency(price)
   ) : listPrice == 0 ? (
-    <div className={cn("text-2xl", className)}>{formatCurrency(intValue)}</div>
+    <div className={cn("text-2xl", className)}>
+      {formatCurrency(intValue)}VND
+    </div>
   ) : isDeal ? (
     <div className="space-y-2">
       <div className="flex justify-center items-center gap-2">
