@@ -181,3 +181,7 @@ export const UserSignUpSchema = UserSignInSchema.extend({
   message: "Sai mật khẩu",
   path: ["confirmPassword"],
 });
+
+export const UserNameSchema = z.object({
+  name: UserName,
+});
