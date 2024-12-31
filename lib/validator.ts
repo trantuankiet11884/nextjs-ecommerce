@@ -88,6 +88,10 @@ export const ShippingAddressSchema = z.object({
   country: z.string().min(1, "Quốc gia là bắt buộc"),
 });
 
+export const ProductUpdateSchema = ProductInputSchema.extend({
+  _id: z.string(),
+});
+
 export const OrderInputSchema = z.object({
   user: z.union([
     MongoId,

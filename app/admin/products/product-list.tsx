@@ -14,7 +14,7 @@ import {
 import { IProduct } from "@/lib/db/models/product.model";
 import React, { useEffect, useState, useTransition } from "react";
 import { Input } from "@/components/ui/input";
-import { formatDateTime, formatId } from "@/lib/utils";
+import { formatCurrency, formatDateTime, formatId } from "@/lib/utils";
 import { ChevronLeft, ChevronRight, Edit2Icon, EyeIcon } from "lucide-react";
 import {
   deleteProduct,
@@ -86,11 +86,15 @@ const ProductList = () => {
                 placeholder="Tìm theo tên sản phẩm"
               />
               {isPending ? (
-                <p>Loading...</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                  <div className="w-3 h-3 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                  <div className="w-3 h-3 bg-blue-600 rounded-full animate-bounce"></div>
+                </div>
               ) : (
                 <p>
                   {data?.totalProducts === 0
-                    ? "No"
+                    ? "0"
                     : `${data?.from}-${data?.to} of ${data?.totalProducts}`}
                   {" kết quả"}
                 </p>
@@ -125,11 +129,15 @@ const ProductList = () => {
                       {product.name}
                     </Link>
                   </TableCell>
-                  <TableCell className="text-right">${product.price}</TableCell>
+                  <TableCell className="text-right">
+                    {formatCurrency(product.price)}VNĐ
+                  </TableCell>
                   <TableCell>{product.category}</TableCell>
                   <TableCell>{product.countInStock}</TableCell>
                   <TableCell>{product.avgRating}</TableCell>
-                  <TableCell>{product.isPublished ? "Yes" : "No"}</TableCell>
+                  <TableCell>
+                    {product.isPublished ? "Đã xuất bản" : "Chưa xuất bản"}
+                  </TableCell>
                   <TableCell>
                     {formatDateTime(product.updatedAt).dateTime}
                   </TableCell>

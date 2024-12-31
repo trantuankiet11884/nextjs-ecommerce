@@ -41,7 +41,7 @@ export const toSlug = (text: string): string =>
 
 const CURRENCY_FORMATTER = new Intl.NumberFormat("vi-VN", {
   currency: "VND",
-  minimumFractionDigits: 3,
+  minimumFractionDigits: 0,
 });
 
 export function formatCurrency(amount: number | string) {
