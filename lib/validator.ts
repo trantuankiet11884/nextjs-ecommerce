@@ -154,6 +154,13 @@ const Email = z
 const Password = z.string().min(3, "Mật khẩu phải có ít nhất 3 ký tự");
 const UserRole = z.string().min(1, "Vai trò là bắt buộc");
 
+export const UserUpdateSchema = z.object({
+  _id: MongoId,
+  name: UserName,
+  email: Email,
+  role: UserRole,
+});
+
 export const UserInputSchema = z.object({
   name: UserName,
   email: Email,

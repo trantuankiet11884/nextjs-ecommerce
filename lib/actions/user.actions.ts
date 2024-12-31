@@ -4,12 +4,39 @@ import bcrypt from "bcryptjs";
 import { auth, signIn, signOut } from "@/auth";
 import { IUserName, IUserSignIn, IUserSignUp } from "@/types";
 import { redirect } from "next/navigation";
-import { UserSignUpSchema } from "../validator";
+import { UserSignUpSchema, UserUpdateSchema } from "../validator";
 import { connectToDatabase } from "../db";
 import User, { IUser } from "../db/models/user.model";
 import { formatError } from "../utils";
 import { PAGE_SIZE } from "../constants";
 import { revalidatePath } from "next/cache";
+import { z } from "zod";
+
+export async function updateUser(user: z.infer<typeof UserUpdateSchema>) {
+  try {
+    await connectToDatabase();
+    const dbUser = await User.findById(user._id);
+    if (!dbUser) throw new Error("User not found");
+    dbUser.name = user.name;
+    dbUser.email = user.email;
+    dbUser.role = user.role;
+    const updatedUser = await dbUser.save();
+    revalidatePath("/admin/users");
+    return {
+      success: true,
+      message: "User updated successfully",
+      data: JSON.parse(JSON.stringify(updatedUser)),
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
+}
+export async function getUserById(userId: string) {
+  await connectToDatabase();
+  const user = await User.findById(userId);
+  if (!user) throw new Error("User not found");
+  return JSON.parse(JSON.stringify(user)) as IUser;
+}
 
 export async function signInWithCredentials(user: IUserSignIn) {
   return await signIn("credentials", { ...user, redirect: false });
