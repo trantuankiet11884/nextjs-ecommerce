@@ -76,7 +76,7 @@ export default function OrderPaymentForm({
               <span>Sản phẩm:</span>
               <span>
                 {" "}
-                <ProductPrice price={itemsPrice} plain />
+                <ProductPrice price={itemsPrice} plain /> VNĐ
               </span>
             </div>
             <div className="flex justify-between">
@@ -87,7 +87,9 @@ export default function OrderPaymentForm({
                 ) : shippingPrice === 0 ? (
                   "Miễn phí"
                 ) : (
-                  <ProductPrice price={shippingPrice} plain />
+                  <>
+                    <ProductPrice price={shippingPrice} plain /> VNĐ
+                  </>
                 )}
               </span>
             </div>
@@ -95,9 +97,11 @@ export default function OrderPaymentForm({
               <span> VAT:</span>
               <span>
                 {taxPrice === undefined ? (
-                  "--"
+                  "-"
                 ) : (
-                  <ProductPrice price={taxPrice} plain />
+                  <>
+                    <ProductPrice price={taxPrice} plain /> VNĐ
+                  </>
                 )}
               </span>
             </div>
@@ -105,7 +109,7 @@ export default function OrderPaymentForm({
               <span> Tổng:</span>
               <span>
                 {" "}
-                <ProductPrice price={totalPrice} plain />
+                <ProductPrice price={totalPrice} plain /> VNĐ
               </span>
             </div>
             {!isPaid && paymentMethod === "PayPal" && (

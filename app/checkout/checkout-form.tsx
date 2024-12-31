@@ -178,18 +178,20 @@ const CheckoutForm = () => {
             <div className="flex justify-between">
               <span>Sản phẩm:</span>
               <span>
-                <ProductPrice price={itemsPrice} plain />
+                <ProductPrice price={itemsPrice} plain /> VNĐ
               </span>
             </div>
             <div className="flex justify-between">
               <span>Vận chuyển & Xử lý:</span>
               <span>
                 {shippingPrice === undefined ? (
-                  "--"
+                  "-"
                 ) : shippingPrice === 0 ? (
                   "Miễn phí"
                 ) : (
-                  <ProductPrice price={shippingPrice} plain />
+                  <>
+                    <ProductPrice price={shippingPrice} plain /> VNĐ
+                  </>
                 )}
               </span>
             </div>
@@ -197,9 +199,11 @@ const CheckoutForm = () => {
               <span> VAT:</span>
               <span>
                 {taxPrice === undefined ? (
-                  "--"
+                  "-"
                 ) : (
-                  <ProductPrice price={taxPrice} plain />
+                  <>
+                    <ProductPrice price={taxPrice} plain /> VNĐ
+                  </>
                 )}
               </span>
             </div>
@@ -511,7 +515,7 @@ const CheckoutForm = () => {
                     {items.map((item, _index) => (
                       <li key={_index}>
                         {item.name} x {item.quantity} ={" "}
-                        {formatCurrency(item.price)}
+                        {formatCurrency(item.price)} VNĐ
                       </li>
                     ))}
                   </ul>
@@ -594,6 +598,7 @@ const CheckoutForm = () => {
                               </p>
                               <p className="font-bold">
                                 <ProductPrice price={item.price} plain />
+                                VNĐ
                               </p>
                               <Input
                                 value={`Số lượng ${item.quantity.toString()}`}
@@ -644,10 +649,13 @@ const CheckoutForm = () => {
                                         : dd.shippingPrice) === 0 ? (
                                         "Miễn phí giao hàng"
                                       ) : (
-                                        <ProductPrice
-                                          price={dd.shippingPrice}
-                                          plain
-                                        />
+                                        <>
+                                          <ProductPrice
+                                            price={dd.shippingPrice}
+                                            plain
+                                          />{" "}
+                                          VNĐ
+                                        </>
                                       )}
                                     </div>
                                   </Label>
