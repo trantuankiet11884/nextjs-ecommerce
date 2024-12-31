@@ -1,11 +1,13 @@
 import {
   Body,
+  Button,
   Column,
   Container,
   Head,
   Heading,
   Html,
   Img,
+  Link,
   Preview,
   Row,
   Section,
@@ -15,12 +17,10 @@ import {
 import { formatCurrency } from "@/lib/utils";
 import { IOrder } from "@/lib/db/models/order.model";
 import { SERVER_URL } from "@/lib/constants";
-import { Link } from "lucide-react";
 type OrderInformationProps = {
   order: IOrder;
 };
-
-PurchaseReceiptEmail.PreviewProps = {
+AskReviewOrderItemsEmail.PreviewProps = {
   order: {
     _id: "123",
     isPaid: true,
@@ -60,19 +60,18 @@ PurchaseReceiptEmail.PreviewProps = {
     isDelivered: true,
   } as IOrder,
 } satisfies OrderInformationProps;
-
 const dateFormatter = new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium" });
-export default async function PurchaseReceiptEmail({
+export default async function AskReviewOrderItemsEmail({
   order,
 }: OrderInformationProps) {
   return (
     <Html>
-      <Preview>Xem biên nhận đơn hàng</Preview>
+      <Preview>Xem lại đơn hàng</Preview>
       <Tailwind>
         <Head />
         <Body className="font-sans bg-white">
           <Container className="max-w-xl">
-            <Heading>Biên lai mua hàng</Heading>
+            <Heading>Xem lại đơn hàng</Heading>
             <Section>
               <Row>
                 <Column>
@@ -83,7 +82,7 @@ export default async function PurchaseReceiptEmail({
                 </Column>
                 <Column>
                   <Text className="mb-0 text-gray-500 whitespace-nowrap text-nowrap mr-4">
-                    Đã mua vào lúc
+                    Đặt hàng lúc
                   </Text>
                   <Text className="mt-0 mr-4">
                     {dateFormatter.format(order.createdAt)}
@@ -91,7 +90,7 @@ export default async function PurchaseReceiptEmail({
                 </Column>
                 <Column>
                   <Text className="mb-0 text-gray-500 whitespace-nowrap text-nowrap mr-4">
-                    Giá phải trả
+                    Tiền thanh toán
                   </Text>
                   <Text className="mt-0 mr-4">
                     {formatCurrency(order.totalPrice)}
@@ -118,13 +117,16 @@ export default async function PurchaseReceiptEmail({
                   </Column>
                   <Column className="align-top">
                     <Link href={`${SERVER_URL}/product/${item.slug}`}>
-                      <Text className="mx-2 my-0">
-                        {item.name} x {item.quantity}
-                      </Text>
+                      <Text className="mx-2 my-0">{item.name}</Text>
                     </Link>
                   </Column>
-                  <Column align="right" className="align-top">
-                    <Text className="m-0 ">{formatCurrency(item.price)}</Text>
+                  <Column align="right" className="align-top ">
+                    <Button
+                      href={`${SERVER_URL}/product/${item.slug}#reviews`}
+                      className="text-center bg-blue-500 hover:bg-blue-700 text-white   py-2 px-4 rounded"
+                    >
+                      Xem lại sản phẩm
+                    </Button>
                   </Column>
                 </Row>
               ))}

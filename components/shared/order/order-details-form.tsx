@@ -15,8 +15,11 @@ import { IOrder } from "@/lib/db/models/order.model";
 import { cn, formatCurrency, formatDateTime } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import ProductPrice from "../product/product-price";
+import { deliverOrder, updateOrderToPaid } from "@/lib/actions/order.actions";
+import ActionButton from "../action-button";
 export default function OrderDetailsForm({
   order,
+  isAdmin,
 }: {
   order: IOrder;
   isAdmin: boolean;
@@ -157,6 +160,19 @@ export default function OrderDetailsForm({
               >
                 Thanh toán đơn hàng
               </Link>
+            )}
+
+            {isAdmin && !isPaid && paymentMethod === "Cash On Delivery" && (
+              <ActionButton
+                caption="Đánh dấu là đã thanh toán"
+                action={() => updateOrderToPaid(order._id)}
+              />
+            )}
+            {isAdmin && isPaid && !isDelivered && (
+              <ActionButton
+                caption="Đánh dấu là đã giao hàng"
+                action={() => deliverOrder(order._id)}
+              />
             )}
           </CardContent>
         </Card>

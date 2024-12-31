@@ -24,14 +24,14 @@ export default function SalesCategoryPieChart({ data }: { data: any[] }) {
           dominantBaseline="central"
           className="text-xs text-white"
         >
-          {`${data[index]._id} ${data[index].totalSales} sales`}
+          {`${data[index]._id} ${data[index].totalSales} đã bán`}
         </text>
       </>
     );
   };
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <PieChart width={400} height={400}>
+    <ResponsiveContainer width="100%" height={500}>
+      <PieChart width={500} height={500}>
         <Pie
           data={data}
           dataKey="totalSales"

@@ -68,19 +68,19 @@ export const AVAILABLE_DELIVERY_DATES = [
   {
     name: "Hỏa tốc",
     daysToDeliver: 1,
-    shippingPrice: 12.9,
+    shippingPrice: 59999,
     freeShippingMinPrice: 0,
   },
   {
     name: "3 ngày",
     daysToDeliver: 3,
-    shippingPrice: 6.9,
+    shippingPrice: 42000,
     freeShippingMinPrice: 0,
   },
   {
     name: "5 ngày",
     daysToDeliver: 5,
-    shippingPrice: 4.9,
+    shippingPrice: 32000,
     freeShippingMinPrice: 35,
   },
 ];

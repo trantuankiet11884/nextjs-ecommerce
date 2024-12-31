@@ -187,7 +187,7 @@ const CheckoutForm = () => {
                 {shippingPrice === undefined ? (
                   "--"
                 ) : shippingPrice === 0 ? (
-                  "Miên phí"
+                  "Miễn phí"
                 ) : (
                   <ProductPrice price={shippingPrice} plain />
                 )}
