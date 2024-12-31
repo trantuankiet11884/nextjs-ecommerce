@@ -24,14 +24,6 @@ const links = [
     title: "Truy cập web",
     href: "/admin/web-pages",
   },
-  {
-    title: "Banner",
-    href: "/admin/carousels",
-  },
-  {
-    title: "Cài đặt",
-    href: "/admin/settings",
-  },
 ];
 export function AdminNav({
   className,

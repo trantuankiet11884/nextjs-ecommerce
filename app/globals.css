@@ -73,6 +73,10 @@ body {
 }
 
 @layer utilities {
+  .web-page-content p {
+    @apply py-2;
+  }
+
   .highlight-link a,
   a.highlight-link {
     @apply text-sky-700  hover:text-orange-700 hover:underline;

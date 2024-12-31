@@ -1091,6 +1091,71 @@ const data: Data = {
       isPublished: true,
     },
   ],
+  webPages: [
+    {
+      title: "Về Chúng Tôi",
+      slug: "ve-chung-toi",
+      content: `Chào mừng bạn đến với [Tên Cửa Hàng Của Bạn], điểm đến tin cậy của bạn cho những sản phẩm chất lượng và dịch vụ tuyệt vời. Hành trình của chúng tôi bắt đầu với sứ mệnh mang lại cho bạn trải nghiệm mua sắm tốt nhất bằng cách cung cấp nhiều loại sản phẩm với giá cả cạnh tranh, tất cả trên một nền tảng tiện lợi.
+Tại [Tên Cửa Hàng Của Bạn], chúng tôi ưu tiên sự hài lòng của khách hàng và sự đổi mới. Đội ngũ của chúng tôi làm việc không ngừng để tuyển chọn đa dạng các mặt hàng, từ những vật dụng thiết yếu hàng ngày đến những ưu đãi độc quyền, đảm bảo có thứ gì đó cho mọi người. Chúng tôi cũng nỗ lực để mang lại trải nghiệm mua sắm liền mạch với vận chuyển nhanh chóng, thanh toán an toàn và hỗ trợ khách hàng tuyệt vời.
+Khi chúng tôi tiếp tục phát triển, cam kết của chúng tôi về chất lượng và dịch vụ vẫn không thay đổi. Cảm ơn bạn đã chọn [Tên Cửa Hàng Của Bạn]—chúng tôi mong được trở thành một phần của hành trình của bạn và mang lại giá trị trong từng bước.`,
+      isPublished: true,
+    },
+    {
+      title: "Liên Hệ",
+      slug: "lien-he",
+      content: `Chúng tôi luôn sẵn sàng giúp đỡ! Nếu bạn có bất kỳ câu hỏi, thắc mắc hay phản hồi nào, đừng ngần ngại liên hệ với chúng tôi. Đội ngũ của chúng tôi sẵn sàng hỗ trợ bạn và đảm bảo rằng bạn có trải nghiệm mua sắm tốt nhất.
+**Hỗ Trợ Khách Hàng**
+Đối với các yêu cầu về đơn hàng, sản phẩm hoặc các vấn đề liên quan đến tài khoản, hãy liên hệ với đội ngũ hỗ trợ khách hàng của chúng tôi:
+- **Email:** support@example.com
+- **Điện thoại:** +1 (123) 456-7890
+- **Trò chuyện trực tiếp:** Có sẵn trên trang web của chúng tôi từ 9h sáng đến 6h tối (Thứ Hai đến Thứ Sáu).
+**Văn Phòng Chính**
+Đối với các yêu cầu liên quan đến doanh nghiệp hoặc công ty, hãy liên hệ với trụ sở chính của chúng tôi:
+- **Địa chỉ:** 1234 Đường E-Commerce, Phòng 567, Thành Phố Kinh Doanh, BC 12345
+- **Điện thoại:** +1 (987) 654-3210
+Chúng tôi rất mong được hỗ trợ bạn! Sự hài lòng của bạn là ưu tiên của chúng tôi.
+`,
+      isPublished: true,
+    },
+    {
+      title: "Trợ Giúp",
+      slug: "tro-giup",
+      content: `Chào mừng bạn đến với Trung Tâm Hỗ Trợ của chúng tôi! Chúng tôi ở đây để giúp bạn với bất kỳ câu hỏi hoặc thắc mắc nào khi bạn mua sắm với chúng tôi. Dù bạn cần trợ giúp về đơn hàng, quản lý tài khoản, hay yêu cầu sản phẩm, trang này cung cấp tất cả thông tin bạn cần để sử dụng nền tảng của chúng tôi một cách dễ dàng.
+**Đặt Hàng và Quản Lý Đơn Hàng**
+Việc đặt hàng rất đơn giản và an toàn. Duyệt qua các danh mục sản phẩm, thêm các mặt hàng vào giỏ hàng của bạn và tiến hành thanh toán. Sau khi đặt hàng, bạn có thể theo dõi tình trạng đơn hàng qua tài khoản của mình trong phần "Đơn Hàng Của Tôi". Nếu bạn cần thay đổi hoặc hủy đơn hàng, vui lòng liên hệ với chúng tôi sớm nhất để được hỗ trợ.
+**Vận Chuyển và Hoàn Trả**
+Chúng tôi cung cấp nhiều tùy chọn vận chuyển để phù hợp với nhu cầu của bạn, bao gồm giao hàng tiêu chuẩn và giao hàng nhanh. Để biết chi tiết về chi phí vận chuyển và thời gian giao hàng, vui lòng truy cập trang Chính Sách Vận Chuyển của chúng tôi. Nếu bạn không hài lòng với sản phẩm, quy trình hoàn trả của chúng tôi rất đơn giản và cho phép bạn yêu cầu hoàn trả trong thời hạn đã quy định. Vui lòng xem thêm tại Chính Sách Hoàn Trả của chúng tôi.
+**Tài Khoản và Hỗ Trợ**
+Việc quản lý tài khoản của bạn rất dễ dàng. Đăng nhập để cập nhật thông tin cá nhân, phương thức thanh toán và địa chỉ lưu trữ. Nếu bạn gặp phải vấn đề hoặc cần hỗ trợ thêm, đội ngũ hỗ trợ khách hàng của chúng tôi luôn sẵn sàng qua email, trò chuyện trực tiếp hoặc điện thoại. Hãy truy cập trang Liên Hệ của chúng tôi để biết thêm thông tin hỗ trợ.`,
+      isPublished: true,
+    },
+    {
+      title: "Chính Sách Bảo Mật",
+      slug: "chinh-sach-bao-mat",
+      content: `Chúng tôi coi trọng sự riêng tư của bạn và cam kết bảo vệ thông tin cá nhân của bạn. Thông báo Bảo Mật này giải thích cách chúng tôi thu thập, sử dụng và chia sẻ dữ liệu của bạn khi bạn tương tác với các dịch vụ của chúng tôi. Bằng việc sử dụng nền tảng của chúng tôi, bạn đồng ý với các thực hành được mô tả trong đây.
+Chúng tôi thu thập các dữ liệu như tên, địa chỉ email, và thông tin thanh toán của bạn để cung cấp cho bạn các dịch vụ được cá nhân hóa và cải thiện trải nghiệm của bạn. Thông tin này cũng có thể được sử dụng cho các mục đích tiếp thị, nhưng chỉ khi bạn đồng ý. Ngoài ra, chúng tôi có thể chia sẻ dữ liệu của bạn với các nhà cung cấp thứ ba tin cậy để thực hiện các giao dịch hoặc giao hàng.
+Dữ liệu của bạn được bảo vệ thông qua các biện pháp bảo mật mạnh mẽ để ngăn chặn truy cập trái phép. Tuy nhiên, bạn có quyền truy cập, chỉnh sửa hoặc xóa thông tin cá nhân của mình bất kỳ lúc nào. Nếu bạn có thắc mắc hoặc lo ngại về sự riêng tư của mình, hãy liên hệ với đội ngũ hỗ trợ của chúng tôi.`,
+      isPublished: true,
+    },
+    {
+      title: "Điều Kiện Sử Dụng",
+      slug: "dieu-kien-su-dung",
+      content: `Chào mừng đến với [Tên Trang Thương Mại Điện Tử]. Bằng việc truy cập hoặc sử dụng trang web của chúng tôi, bạn đồng ý tuân thủ và bị ràng buộc bởi các điều khoản và điều kiện sau đây. Những điều khoản này quy định việc sử dụng nền tảng của chúng tôi, bao gồm việc duyệt web, mua sản phẩm và tương tác với bất kỳ nội dung hay dịch vụ nào được cung cấp. Bạn phải từ 18 tuổi trở lên hoặc có sự đồng ý của cha mẹ hoặc người giám hộ để sử dụng trang web này. Bất kỳ vi phạm nào đối với các điều khoản này có thể dẫn đến việc chấm dứt quyền truy cập của bạn vào nền tảng của chúng tôi.
+Chúng tôi cố gắng đảm bảo tất cả các mô tả sản phẩm, giá cả và thông tin về tình trạng sẵn có trên trang web của mình là chính xác. Tuy nhiên, sai sót có thể xảy ra và chúng tôi có quyền sửa chữa chúng mà không cần thông báo trước. Tất cả các giao dịch mua hàng đều phải tuân theo chính sách hoàn trả và hoàn tiền của chúng tôi. Bằng cách sử dụng trang web của chúng tôi, bạn công nhận rằng thông tin cá nhân của bạn sẽ được xử lý theo chính sách bảo mật của chúng tôi, đảm bảo rằng dữ liệu của bạn được xử lý một cách an toàn và có trách nhiệm. Vui lòng xem xét kỹ các điều khoản này trước khi tiến hành bất kỳ giao dịch nào.`,
+      isPublished: true,
+    },
+    {
+      title: "Dịch Vụ Khách Hàng",
+      slug: "dich-vu-khach-hang",
+      content: `Tại [Tên Cửa Hàng Của Bạn], đội ngũ dịch vụ khách hàng của chúng tôi ở đây để đảm bảo rằng bạn có trải nghiệm mua sắm tốt nhất. Dù bạn cần trợ giúp về đơn hàng, chi tiết sản phẩm hay hoàn trả, chúng tôi cam kết cung cấp sự hỗ trợ nhanh chóng và hữu ích.
+Nếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào, vui lòng liên hệ với chúng tôi qua các phương thức liên lạc sau:
+- **Email:** support@example.com
+- **Điện thoại:** +1 (123) 456-7890
+- **Trò chuyện trực tiếp:** Có sẵn trên trang web của chúng tôi để hỗ trợ ngay lập tức
+Chúng tôi cũng cung cấp các tài nguyên hữu ích như theo dõi đơn hàng, hướng dẫn sản phẩm và các câu hỏi thường gặp để giúp bạn với những thắc mắc phổ biến. Sự hài lòng của bạn là ưu tiên hàng đầu của chúng tôi và chúng tôi ở đây để giải quyết mọi vấn đề một cách nhanh chóng và hiệu quả. Cảm ơn bạn đã chọn chúng tôi!`,
+      isPublished: true,
+    },
+  ],
 };
 
 export default data;

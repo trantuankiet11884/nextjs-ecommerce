@@ -161,6 +161,16 @@ export const UserUpdateSchema = z.object({
   role: UserRole,
 });
 
+export const WebPageInputSchema = z.object({
+  title: z.string().min(3, "Tiêu đề phải có ít nhất 3 ký tự"),
+  slug: z.string().min(3, "Slug phải có ít nhất 3 ký tự"),
+  content: z.string().min(1, "Nội dung là bắt buộc"),
+  isPublished: z.boolean(),
+});
+export const WebPageUpdateSchema = WebPageInputSchema.extend({
+  _id: z.string(),
+});
+
 export const UserInputSchema = z.object({
   name: UserName,
   email: Email,
