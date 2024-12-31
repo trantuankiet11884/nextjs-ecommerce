@@ -106,7 +106,7 @@ export default async function SearchPage(props: {
     sort,
   });
   return (
-    <div>
+    <div className="">
       <div className="mb-2 py-2 md:border-b flex-between flex-col md:flex-row ">
         <div className="flex items-center">
           {data.totalProducts === 0

@@ -527,6 +527,28 @@ const CheckoutForm = () => {
                     Thay đổi
                   </Button>
                 </div>
+                {isPaymentMethodSelected && isAddressSelected && (
+                  <div className="mt-12 lg:hidden md:hidden">
+                    <Button
+                      onClick={handlePlaceOrder}
+                      className="rounded-full w-full"
+                    >
+                      Đặt hàng
+                    </Button>
+                    <p className="text-xs text-center py-2">
+                      Bằng cách đặt hàng, bạn đồng ý với {APP_NAME}&apos;s{" "}
+                      <Link href="/page/privacy-policy">
+                        chính sách bảo mật
+                      </Link>{" "}
+                      và
+                      <Link href="/page/conditions-of-use">
+                        {" "}
+                        điều khoản sử dụng
+                      </Link>
+                      .
+                    </p>
+                  </div>
+                )}
               </div>
             ) : isPaymentMethodSelected && isAddressSelected ? (
               <>
@@ -634,6 +656,29 @@ const CheckoutForm = () => {
                             </RadioGroup>
                           </ul>
                         </div>
+                        {isPaymentMethodSelected && isAddressSelected && (
+                          <div className="mt-4">
+                            <Button
+                              onClick={handlePlaceOrder}
+                              className="rounded-full w-full"
+                            >
+                              Đặt hàng
+                            </Button>
+                            <p className="text-xs text-center py-2">
+                              Bằng cách đặt hàng, bạn đồng ý với {APP_NAME}
+                              &apos;s{" "}
+                              <Link href="/page/privacy-policy">
+                                chính sách bảo mật
+                              </Link>{" "}
+                              và
+                              <Link href="/page/conditions-of-use">
+                                {" "}
+                                điều khoản sử dụng
+                              </Link>
+                              .
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>

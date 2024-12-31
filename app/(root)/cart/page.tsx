@@ -30,7 +30,7 @@ export default function CartPage() {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="grid grid-cols-1 md:grid-cols-4  md:gap-4">
         {items.length === 0 ? (
           <Card className="col-span-4 rounded-none">
@@ -81,7 +81,7 @@ export default function CartPage() {
                             <span className="font-bold">Màu: </span>{" "}
                             {item?.color
                               ? colorTranslations[item?.color]
-                              : item?.color ?? "-"}
+                              : (item?.color ?? "-")}
                           </p>
                           <p className="text-sm">
                             <span className="font-bold">Kích thước: </span>{" "}
@@ -141,6 +141,7 @@ export default function CartPage() {
                               price={item.price * item.quantity}
                               plain
                             />
+                            VNĐ
                           </span>
                         </p>
                       </div>
@@ -151,6 +152,7 @@ export default function CartPage() {
                     sản phẩm):{" "}
                     <span className="font-bold ml-1">
                       <ProductPrice price={itemsPrice} plain />
+                      VNĐ
                     </span>{" "}
                   </div>
                 </CardContent>
@@ -183,6 +185,7 @@ export default function CartPage() {
                     sản phẩm):{" "}
                     <span className="font-bold">
                       <ProductPrice price={itemsPrice} plain />
+                      VNĐ
                     </span>{" "}
                   </div>
                   <Button

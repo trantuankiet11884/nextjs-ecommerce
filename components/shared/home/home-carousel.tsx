@@ -28,7 +28,7 @@ export function HomeCarousel({
     <Carousel
       dir="ltr"
       plugins={[plugin.current]}
-      className="w-full mx-auto "
+      className="w-full mx-auto lg:mt-20 md:mt-28 mt-52"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >

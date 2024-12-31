@@ -43,7 +43,7 @@ export default function CartAddItem({ itemId }: { itemId: string }) {
                 <span className="font-bold"> Màu: </span>{" "}
                 {item?.color
                   ? colorTranslations[item?.color]
-                  : item?.color ?? "-"}
+                  : (item?.color ?? "-")}
               </p>
               <p className="text-sm">
                 <span className="font-bold"> Kích thước: </span>{" "}
