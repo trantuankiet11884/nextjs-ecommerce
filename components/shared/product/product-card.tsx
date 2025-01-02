@@ -51,6 +51,7 @@ const ProductCard = ({
       </div>
     </Link>
   );
+
   const ProductDetails = () => (
     <div className="flex-1 space-y-2">
       <p className="font-bold">{product.brand}</p>
@@ -102,17 +103,21 @@ const ProductCard = ({
   );
 
   return hideBorder ? (
-    <div className="flex flex-col">
-      <ProductImage />
+    <Card className="flex flex-col  h-full">
+      <CardHeader className="p-3">
+        <ProductImage />
+      </CardHeader>
       {!hideDetails && (
         <>
-          <div className="p-3 flex-1 text-center">
+          <CardContent className="p-3 flex-1 text-center">
             <ProductDetails />
-          </div>
-          {!hideAddToCart && <AddButton />}
+          </CardContent>
+          <CardFooter className="p-3">
+            {!hideAddToCart && <AddButton />}
+          </CardFooter>
         </>
       )}
-    </div>
+    </Card>
   ) : (
     <Card className="flex flex-col  ">
       <CardHeader className="p-3">

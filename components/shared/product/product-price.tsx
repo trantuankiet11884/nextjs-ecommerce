@@ -24,7 +24,7 @@ const ProductPrice = ({
   return plain ? (
     formatCurrency(price)
   ) : listPrice == 0 ? (
-    <div className={cn("text-2xl", className)}>
+    <div className={cn("text-xl", className)}>
       {formatCurrency(intValue)}VNĐ
     </div>
   ) : isDeal ? (
@@ -38,12 +38,12 @@ const ProductPrice = ({
         </span>
       </div>
       <div
-        className={`flex ${forListing && "justify-center"} items-center gap-2`}
+        className={`flex flex-col ${forListing && "justify-center"} items-center gap-2`}
       >
-        <div className={cn("text-2xl", className)}>
+        <div className={cn("text-xl", className)}>
           {formatCurrency(intValue)}VNĐ
         </div>
-        <div className="text-muted-foreground text-xs py-2">
+        <div className="text-muted-foreground text-xs">
           Giá cũ:{" "}
           <span className="line-through">{formatCurrency(listPrice)}VNĐ</span>
         </div>
@@ -52,8 +52,8 @@ const ProductPrice = ({
   ) : (
     <div className="">
       <div className="flex justify-center gap-3">
-        <div className="text-3xl text-orange-700">-{discountPercent}%</div>
-        <div className={cn("text-2xl", className)}>
+        <div className="text-2xl text-orange-700">-{discountPercent}%</div>
+        <div className={cn("text-xl", className)}>
           {formatCurrency(intValue)}VNĐ
         </div>
       </div>

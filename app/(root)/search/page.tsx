@@ -21,16 +21,20 @@ const sortOrders = [
 
 const prices = [
   {
-    name: "1 đến 20,000 đ",
-    value: "1-20",
+    name: "100.000 đến 200.000 đ",
+    value: "1-200000",
   },
   {
-    name: "21,000 đến 50,000 đ",
-    value: "21-50",
+    name: "200.000 đến 500.000 đ",
+    value: "200000-500000",
   },
   {
-    name: "51,000 đến 1,000,000 đ",
-    value: "51-1000",
+    name: "500.000 đến 1.000.000 đ",
+    value: "500000-1000000",
+  },
+  {
+    name: "trên 1.000.000 đ",
+    value: "1000000-100000000",
   },
 ];
 export async function generateMetadata(props: {

@@ -73,9 +73,7 @@ export default async function Page() {
     <>
       <HomeCarousel items={data.carousels} />
       <div className="md:p-4 md:space-y-4 bg-border">
-        <HomeCard cards={cards} />
-
-        <Card className="w-full rounded-none">
+        <Card className="rounded-md w-full">
           <CardContent className="p-4 items-center gap-3">
             <ProductSlider
               title={"Khuyến mãi hôm nay"}
@@ -83,7 +81,9 @@ export default async function Page() {
             />
           </CardContent>
         </Card>
-        <Card className="w-full rounded-none">
+        <HomeCard cards={cards} />
+
+        <Card className="rounded-md w-full mb-4">
           <CardContent className="p-4 items-center gap-3">
             <ProductSlider
               title="Sản phẩm bán chạy"
@@ -92,9 +92,9 @@ export default async function Page() {
             />
           </CardContent>
         </Card>
-      </div>
-      <div className="p-4 bg-background">
-        <BrowsingHistoryList />
+        <div className="">
+          <BrowsingHistoryList />
+        </div>
       </div>
     </>
   );

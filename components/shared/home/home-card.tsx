@@ -16,16 +16,18 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4">
       {cards.map((card) => (
-        <Card key={card.title} className="rounded-none flex flex-col">
+        <Card key={card.title} className="rounded-md flex flex-col">
           <CardContent className="p-4 flex-1">
-            <h3 className="text-xl font-bold mb-4">{card.title}</h3>
+            <h3 className="text-xl font-bold mb-4 line-clamp-1">
+              {card.title}
+            </h3>
             <div className="grid grid-cols-2 gap-4">
               {card.items.map((item) => (
                 <Link
                   prefetch={true}
                   key={item.name}
                   href={item.href}
-                  className="flex flex-col"
+                  className="flex flex-col border rounded-md p-2"
                 >
                   <Image
                     src={item.image}
@@ -47,7 +49,7 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
               <Link
                 prefetch={true}
                 href={card.link.href}
-                className="mt-4 block"
+                className="mt-4 block hover:underline"
               >
                 {card.link.text}
               </Link>

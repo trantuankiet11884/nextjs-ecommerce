@@ -4,6 +4,7 @@ import Link from "next/link";
 import useIsMounted from "@/hooks/use-is-mounted";
 import { cn } from "@/lib/utils";
 import useCartStore from "@/hooks/use-cart-store";
+import { Badge } from "@/components/ui/badge";
 export default function CartButton() {
   const isMounted = useIsMounted();
   const {
@@ -17,16 +18,16 @@ export default function CartButton() {
       <div className="flex items-end text-xs relative">
         <ShoppingCartIcon className="h-8 w-8" />
         {isMounted && (
-          <span
+          <Badge
+            variant="destructive"
             className={cn(
-              `bg-black  px-1 rounded-full text-primary text-base font-bold absolute right-[30px] top-[-4px] z-10`,
+              `w-6 h-6 px-1 rounded-full text-base flex items-center justify-center font-bold absolute right-[-10px] top-[-10px] z-10`,
               cartItemsCount >= 10 && "text-sm px-0 p-[1px]"
             )}
           >
             {cartItemsCount}
-          </span>
+          </Badge>
         )}
-        <span className="font-bold">Giỏ hàng</span>
       </div>
     </Link>
   );

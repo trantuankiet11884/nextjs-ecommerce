@@ -12,21 +12,27 @@ export default function BrowsingHistoryList({
   const { products } = useBrowsingHistory();
 
   return (
-    products.length !== 0 && (
-      <div className="bg-background">
-        <Separator className={cn("mb-4", className)} />
-        <ProductList
-          title={"Liên quan đến các sản phẩm bạn đã xem"}
-          type="related"
-        />
-        <Separator className="mb-4" />
-        <ProductList
-          title={"Lịch sử duyệt web của bạn"}
-          hideDetails
-          type="history"
-        />
-      </div>
-    )
+    <>
+      {products.length !== 0 && (
+        <div className="flex flex-col gap-4">
+          <div className="bg-background rounded-md p-4">
+            <Separator className={cn("", className)} />
+            <ProductList
+              title={"Liên quan đến các sản phẩm bạn đã xem"}
+              type="related"
+            />
+          </div>
+          <div className="bg-background rounded-md p-4">
+            <Separator className="" />
+            <ProductList
+              title={"Lịch sử duyệt web của bạn"}
+              hideDetails
+              type="history"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 function ProductList({
@@ -55,8 +61,14 @@ function ProductList({
   }, [products, type]);
 
   return (
-    data.length > 0 && (
-      <ProductSlider title={title} products={data} hideDetails={hideDetails} />
-    )
+    <div className="mt-8">
+      {data.length > 0 && (
+        <ProductSlider
+          title={title}
+          products={data}
+          hideDetails={hideDetails}
+        />
+      )}
+    </div>
   );
 }

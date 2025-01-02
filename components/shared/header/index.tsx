@@ -11,7 +11,7 @@ export default async function Header() {
   const categories = await getAllCategories();
 
   return (
-    <header className="bg-black text-white fixed z-50 w-full">
+    <header className="bg-white fixed z-50 w-full rounded-md">
       <div className="px-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -39,7 +39,7 @@ export default async function Header() {
           <Search />
         </div>
       </div>
-      <div className="flex items-center px-3 mb-[1px]  bg-gray-800">
+      <div className="flex items-center px-3 mb-[1px]  bg-white">
         <Sidebar categories={categories} />
         <div className="flex items-center flex-wrap gap-3 overflow-hidden max-h-[42px]">
           {data.headerMenus.map((menu) => (
@@ -49,7 +49,7 @@ export default async function Header() {
               key={menu.href}
               className="header-button !p-2"
             >
-              {menu.name}
+              <span className="hover:underline">{menu.name}</span>
             </Link>
           ))}
         </div>

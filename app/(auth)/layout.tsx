@@ -16,7 +16,6 @@ export default async function AuthLayout({
             alt="logo"
             width={64}
             height={64}
-            priority
             style={{
               maxWidth: "100%",
               height: "auto",

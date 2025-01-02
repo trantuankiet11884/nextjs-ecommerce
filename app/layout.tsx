@@ -36,6 +36,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          fontFamily:
+            "var(--font-geist-sans), 'Public Sans', 'Helvetica Neue', Arial, sans-serif",
+        }}
       >
         <Suspense fallback={<LoadingPage />}>
           <LoadingProvider />
