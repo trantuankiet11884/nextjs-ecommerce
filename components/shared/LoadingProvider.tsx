@@ -1,4 +1,3 @@
-// components/LoadingProvider.tsx
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
@@ -20,7 +19,6 @@ export default function LoadingProvider() {
     handleStart();
     handleComplete();
     console.time("Route change");
-    // code chuyển trang
     console.timeEnd("Route change");
   }, [pathname, searchParams]);
 
