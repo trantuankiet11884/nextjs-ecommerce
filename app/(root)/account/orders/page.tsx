@@ -30,7 +30,9 @@ export default async function OrdersPage(props: {
   return (
     <div>
       <div className="flex gap-2">
-        <Link href="/account">Tài khoản</Link>
+        <Link prefetch={true} href="/account">
+          Tài khoản
+        </Link>
         <span>›</span>
         <span>{PAGE_TITLE}</span>
       </div>
@@ -58,7 +60,7 @@ export default async function OrdersPage(props: {
             {orders.data.map((order: IOrder) => (
               <TableRow key={order._id}>
                 <TableCell>
-                  <Link href={`/account/orders/${order._id}`}>
+                  <Link prefetch={true} href={`/account/orders/${order._id}`}>
                     {formatId(order._id)}
                   </Link>
                 </TableCell>
@@ -79,7 +81,7 @@ export default async function OrdersPage(props: {
                     : "No"}
                 </TableCell>
                 <TableCell>
-                  <Link href={`/account/orders/${order._id}`}>
+                  <Link prefetch={true} href={`/account/orders/${order._id}`}>
                     <span className="px-2">Chi tiết</span>
                   </Link>
                 </TableCell>

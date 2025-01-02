@@ -128,7 +128,9 @@ export default async function SearchPage(props: {
           rating !== "all" ||
           price !== "all" ? (
             <Button variant={"link"} asChild>
-              <Link href="/search">Bỏ chọn</Link>
+              <Link prefetch={true} href="/search">
+                Bỏ chọn
+              </Link>
             </Button>
           ) : null}
         </div>
@@ -148,6 +150,7 @@ export default async function SearchPage(props: {
               <ul>
                 <li>
                   <Link
+                    prefetch={true}
                     className={`${
                       ("all" === category || "" === category) && "text-primary"
                     }`}
@@ -159,6 +162,7 @@ export default async function SearchPage(props: {
                 {categories.map((c: string) => (
                   <li key={c}>
                     <Link
+                      prefetch={true}
                       className={`${c === category && "text-primary"}`}
                       href={getFilterUrl({ category: c, params })}
                     >
@@ -173,6 +177,7 @@ export default async function SearchPage(props: {
               <ul>
                 <li>
                   <Link
+                    prefetch={true}
                     className={`${"all" === price && "text-primary"}`}
                     href={getFilterUrl({ price: "all", params })}
                   >
@@ -182,6 +187,7 @@ export default async function SearchPage(props: {
                 {prices.map((p) => (
                   <li key={p.value}>
                     <Link
+                      prefetch={true}
                       href={getFilterUrl({ price: p.value, params })}
                       className={`${p.value === price && "text-primary"}`}
                     >
@@ -197,6 +203,7 @@ export default async function SearchPage(props: {
               <ul>
                 <li>
                   <Link
+                    prefetch={true}
                     className={`${
                       ("all" === tag || "" === tag) && "text-primary"
                     }`}
@@ -220,6 +227,7 @@ export default async function SearchPage(props: {
                   return (
                     <li key={t}>
                       <Link
+                        prefetch={true}
                         className={`${toSlug(t) === tag && "text-primary"}`}
                         href={getFilterUrl({ tag: t, params })}
                       >

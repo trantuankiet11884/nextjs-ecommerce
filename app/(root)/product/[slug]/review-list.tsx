@@ -264,6 +264,7 @@ export default function ReviewList({
             ) : (
               <div>
                 <Link
+                  prefetch={true}
                   href={`/sign-in?callbackUrl=/product/${product.slug}`}
                   className="highlight-link"
                 >

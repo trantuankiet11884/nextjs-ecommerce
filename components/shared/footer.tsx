@@ -20,9 +20,16 @@ export default function Footer() {
       </div>
       <div className="p-4">
         <div className="flex justify-center gap-3 text-sm">
-          <Link href="/page/conditions-of-use">Điều khoản sử dụng</Link>
-          <Link href="/page/privacy-policy"> Thông báo về quyền riêng tư</Link>
-          <Link href="/page/help">Trợ giúp</Link>
+          <Link prefetch={true} href="/page/conditions-of-use">
+            Điều khoản sử dụng
+          </Link>
+          <Link prefetch={true} href="/page/privacy-policy">
+            {" "}
+            Thông báo về quyền riêng tư
+          </Link>
+          <Link prefetch={true} href="/page/help">
+            Trợ giúp
+          </Link>
         </div>
         <div className="flex justify-center text-sm">
           <p> © 2000-2024, {APP_NAME}</p>

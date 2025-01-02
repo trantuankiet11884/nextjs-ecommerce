@@ -100,7 +100,7 @@ export default function OverviewReport() {
                 <ProductPrice price={data.totalSales} plain />
               </div>
               <div>
-                <Link className="text-xs" href="/admin/orders">
+                <Link prefetch={true} className="text-xs" href="/admin/orders">
                   Xem chi tiết
                 </Link>
               </div>
@@ -118,7 +118,7 @@ export default function OverviewReport() {
                 {formatNumber(data.ordersCount)}
               </div>
               <div>
-                <Link className="text-xs" href="/admin/orders">
+                <Link prefetch={true} className="text-xs" href="/admin/orders">
                   Xem đơn hàng
                 </Link>
               </div>
@@ -132,7 +132,7 @@ export default function OverviewReport() {
             <CardContent className="space-y-2">
               <div className="text-2xl font-bold">{data.usersCount}</div>
               <div>
-                <Link className="text-xs" href="/admin/users">
+                <Link prefetch={true} className="text-xs" href="/admin/users">
                   Xem chi tiết
                 </Link>
               </div>
@@ -146,7 +146,11 @@ export default function OverviewReport() {
             <CardContent className="space-y-2">
               <div className="text-2xl font-bold">{data.productsCount}</div>
               <div>
-                <Link className="text-xs" href="/admin/products">
+                <Link
+                  prefetch={true}
+                  className="text-xs"
+                  href="/admin/products"
+                >
                   Xem chi tiết
                 </Link>
               </div>
@@ -222,7 +226,10 @@ export default function OverviewReport() {
                         <ProductPrice price={order.totalPrice} plain />đ
                       </TableCell>
                       <TableCell>
-                        <Link href={`/admin/orders/${order._id}`}>
+                        <Link
+                          prefetch={true}
+                          href={`/admin/orders/${order._id}`}
+                        >
                           <span className="px-2 flex items-center justify-center">
                             <EyeIcon />
                           </span>

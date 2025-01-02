@@ -16,6 +16,7 @@ export default async function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link
+              prefetch={true}
               href="/"
               className="flex items-center header-button font-extrabold text-2xl m-1 "
             >
@@ -24,6 +25,7 @@ export default async function Header() {
                 width={40}
                 height={40}
                 alt={`${APP_NAME} logo`}
+                loading="lazy"
               />
               {APP_NAME}
             </Link>
@@ -42,6 +44,7 @@ export default async function Header() {
         <div className="flex items-center flex-wrap gap-3 overflow-hidden max-h-[42px]">
           {data.headerMenus.map((menu) => (
             <Link
+              prefetch={true}
               href={menu.href}
               key={menu.href}
               className="header-button !p-2"

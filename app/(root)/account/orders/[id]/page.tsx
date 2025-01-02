@@ -26,9 +26,13 @@ export default async function OrderDetailsPage(props: {
   return (
     <>
       <div className="flex gap-2">
-        <Link href="/account">Tài khoản</Link>
+        <Link prefetch={true} href="/account">
+          Tài khoản
+        </Link>
         <span>›</span>
-        <Link href="/account/orders">Đơn hàng của bạn</Link>
+        <Link prefetch={true} href="/account/orders">
+          Đơn hàng của bạn
+        </Link>
         <span>›</span>
         <span>Đơn hàng{formatId(order._id)}</span>
       </div>

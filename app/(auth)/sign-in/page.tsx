@@ -39,7 +39,10 @@ export default async function SignIn(props: {
         </CardContent>
       </Card>
       <SeparatorWithOr>Bạn không có tài khoản tại {APP_NAME}?</SeparatorWithOr>
-      <Link href={`/sign-up?callbackUrl=${encodeURIComponent(callbackUrl)}`}>
+      <Link
+        prefetch={true}
+        href={`/sign-up?callbackUrl=${encodeURIComponent(callbackUrl)}`}
+      >
         <Button className="w-full" variant="outline">
           Tạo tài khoản của bạn tại {APP_NAME}
         </Button>

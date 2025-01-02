@@ -15,9 +15,13 @@ const UpdateWebPage = async (props: UpdateWebPageProps) => {
   return (
     <main className="max-w-6xl mx-auto p-4">
       <div className="flex mb-4">
-        <Link href="/admin/web-pages">Tạo</Link>
+        <Link prefetch={true} href="/admin/web-pages">
+          Tạo
+        </Link>
         <span className="mx-1">›</span>
-        <Link href={`/admin/web-pages/${webPage._id}`}>{webPage._id}</Link>
+        <Link prefetch={true} href={`/admin/web-pages/${webPage._id}`}>
+          {webPage._id}
+        </Link>
       </div>
       <div className="my-8">
         <WebPageForm type="Update" webPage={webPage} webPageId={webPage._id} />

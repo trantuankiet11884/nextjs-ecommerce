@@ -39,7 +39,7 @@ export default function CartPage() {
             </CardHeader>
             <CardContent>
               Tiếp tục mua hàng tại{" "}
-              <Link href="/" className="font-bold">
+              <Link prefetch={true} href="/" className="font-bold">
                 {APP_NAME}
               </Link>
             </CardContent>
@@ -56,7 +56,7 @@ export default function CartPage() {
                       key={item.clientId}
                       className="flex flex-col md:flex-row justify-between py-4 border-b gap-4"
                     >
-                      <Link href={`/product/${item.slug}`}>
+                      <Link prefetch={true} href={`/product/${item.slug}`}>
                         <div className="relative w-40 h-40">
                           <Image
                             src={item.image}
@@ -66,11 +66,13 @@ export default function CartPage() {
                             style={{
                               objectFit: "contain",
                             }}
+                            loading="lazy"
                           />
                         </div>
                       </Link>
                       <div className="flex-1 space-y-4">
                         <Link
+                          prefetch={true}
                           href={`/product/${item.slug}`}
                           className="text-lg hover:no-underline  "
                         >

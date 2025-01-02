@@ -71,7 +71,7 @@ export default async function OrdersPage(props: {
                 </TableCell>
                 <TableCell className="flex gap-1">
                   <Button asChild variant="outline" size="sm">
-                    <Link href={`/admin/orders/${order._id}`}>
+                    <Link prefetch={true} href={`/admin/orders/${order._id}`}>
                       <EyeIcon />
                     </Link>
                   </Button>

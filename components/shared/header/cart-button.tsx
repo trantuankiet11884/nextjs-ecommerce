@@ -13,7 +13,7 @@ export default function CartButton() {
   const cartItemsCount = items.reduce((a, c) => a + c.quantity, 0);
 
   return (
-    <Link href="/cart" className="px-1 header-button">
+    <Link prefetch={true} href="/cart" className="px-1 header-button">
       <div className="flex items-end text-xs relative">
         <ShoppingCartIcon className="h-8 w-8" />
         {isMounted && (

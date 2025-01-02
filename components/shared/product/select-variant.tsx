@@ -30,6 +30,7 @@ export default function SelectVariant({
               key={x}
             >
               <Link
+                prefetch={true}
                 replace
                 scroll={false}
                 href={`?${new URLSearchParams({
@@ -63,6 +64,7 @@ export default function SelectVariant({
               key={x}
             >
               <Link
+                prefetch={true}
                 replace
                 scroll={false}
                 href={`?${new URLSearchParams({

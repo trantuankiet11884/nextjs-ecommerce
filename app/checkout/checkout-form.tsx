@@ -222,8 +222,15 @@ const CheckoutForm = () => {
             </Button>
             <p className="text-xs text-center py-2">
               Bằng cách đặt hàng, bạn đồng ý với {APP_NAME}&apos;s{" "}
-              <Link href="/page/privacy-policy">chính sách bảo mật</Link> và
-              <Link href="/page/conditions-of-use"> điều khoản sử dụng</Link>.
+              <Link prefetch={true} href="/page/privacy-policy">
+                chính sách bảo mật
+              </Link>{" "}
+              và
+              <Link prefetch={true} href="/page/conditions-of-use">
+                {" "}
+                điều khoản sử dụng
+              </Link>
+              .
             </p>
           </div>
         )}
@@ -541,11 +548,11 @@ const CheckoutForm = () => {
                     </Button>
                     <p className="text-xs text-center py-2">
                       Bằng cách đặt hàng, bạn đồng ý với {APP_NAME}&apos;s{" "}
-                      <Link href="/page/privacy-policy">
+                      <Link prefetch={true} href="/page/privacy-policy">
                         chính sách bảo mật
                       </Link>{" "}
                       và
-                      <Link href="/page/conditions-of-use">
+                      <Link prefetch={true} href="/page/conditions-of-use">
                         {" "}
                         điều khoản sử dụng
                       </Link>
@@ -590,6 +597,7 @@ const CheckoutForm = () => {
                                 style={{
                                   objectFit: "contain",
                                 }}
+                                loading="lazy"
                               />
                             </div>
                             <div className="flex-1">
@@ -675,11 +683,14 @@ const CheckoutForm = () => {
                             <p className="text-xs text-center py-2">
                               Bằng cách đặt hàng, bạn đồng ý với {APP_NAME}
                               &apos;s{" "}
-                              <Link href="/page/privacy-policy">
+                              <Link prefetch={true} href="/page/privacy-policy">
                                 chính sách bảo mật
                               </Link>{" "}
                               và
-                              <Link href="/page/conditions-of-use">
+                              <Link
+                                prefetch={true}
+                                href="/page/conditions-of-use"
+                              >
                                 {" "}
                                 điều khoản sử dụng
                               </Link>

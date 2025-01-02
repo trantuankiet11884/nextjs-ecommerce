@@ -50,13 +50,18 @@ export default function TableChart({
           className="grid grid-cols-[100px_1fr_80px] md:grid-cols-[250px_1fr_80px] gap-2 space-y-4  "
         >
           {image ? (
-            <Link className="flex items-end" href={`/admin/products/${id}`}>
+            <Link
+              prefetch={true}
+              className="flex items-end"
+              href={`/admin/products/${id}`}
+            >
               <Image
                 className="rounded border  aspect-square object-scale-down max-w-full h-auto mx-auto mr-1"
                 src={image!}
                 alt={label}
                 width={36}
                 height={36}
+                loading="lazy"
               />
               <p className="text-center text-sm whitespace-nowrap overflow-hidden text-ellipsis">
                 {label}

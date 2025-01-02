@@ -22,6 +22,7 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
             <div className="grid grid-cols-2 gap-4">
               {card.items.map((item) => (
                 <Link
+                  prefetch={true}
                   key={item.name}
                   href={item.href}
                   className="flex flex-col"
@@ -32,6 +33,7 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
                     className="aspect-square object-scale-down max-w-full h-auto mx-auto"
                     height={120}
                     width={120}
+                    loading="lazy"
                   />
                   <p className="text-center text-sm whitespace-nowrap overflow-hidden text-ellipsis">
                     {item.name}
@@ -42,7 +44,11 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
           </CardContent>
           {card.link && (
             <CardFooter>
-              <Link href={card.link.href} className="mt-4 block">
+              <Link
+                prefetch={true}
+                href={card.link.href}
+                className="mt-4 block"
+              >
                 {card.link.text}
               </Link>
             </CardFooter>

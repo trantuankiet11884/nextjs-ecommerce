@@ -18,9 +18,11 @@ export default async function UserEditPage(props: {
   return (
     <main className="max-w-6xl mx-auto p-4">
       <div className="flex mb-4">
-        <Link href="/admin/users">Người dùng</Link>
+        <Link prefetch={true} href="/admin/users">
+          Người dùng
+        </Link>
         <span className="mx-1">›</span>
-        <Link href={`/admin/users/${user._id}`}>
+        <Link prefetch={true} href={`/admin/users/${user._id}`}>
           Cập nhật người dùng{" "}
           <span className="italic font-bold">{user.name}</span>
         </Link>

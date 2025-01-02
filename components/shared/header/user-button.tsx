@@ -40,14 +40,26 @@ export default async function UserButton() {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuGroup>
-              <Link className="w-full cursor-pointer" href="/account">
+              <Link
+                prefetch={true}
+                className="w-full cursor-pointer"
+                href="/account"
+              >
                 <DropdownMenuItem>Tài khoản</DropdownMenuItem>
               </Link>
-              <Link className="w-full cursor-pointer" href="/account/orders">
+              <Link
+                prefetch={true}
+                className="w-full cursor-pointer"
+                href="/account/orders"
+              >
                 <DropdownMenuItem>Đơn hàng của bạn</DropdownMenuItem>
               </Link>
               {session.user.role === "Admin" && (
-                <Link className="w-full cursor-pointer" href="/admin/overview">
+                <Link
+                  prefetch={true}
+                  className="w-full cursor-pointer"
+                  href="/admin/overview"
+                >
                   <DropdownMenuItem>Admin</DropdownMenuItem>
                 </Link>
               )}
@@ -68,6 +80,7 @@ export default async function UserButton() {
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <Link
+                  prefetch={true}
                   className={cn(buttonVariants(), "w-full")}
                   href="/sign-in"
                 >
@@ -78,6 +91,7 @@ export default async function UserButton() {
             <DropdownMenuLabel>
               <div className="font-normal">
                 <Link
+                  prefetch={true}
                   href="/sign-up"
                   className={cn(
                     buttonVariants({ variant: "destructive" }),

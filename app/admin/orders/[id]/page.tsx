@@ -20,8 +20,8 @@ const AdminOrderDetailsPage = async (props: {
   return (
     <main className="max-w-6xl mx-auto p-4">
       <div className="flex mb-4">
-        <Link href="/admin/orders">Orders</Link> <span className="mx-1">›</span>
-        <Link href={`/admin/orders/${order._id}`}>{order._id}</Link>
+        <Link prefetch={true} href="/admin/orders">Orders</Link> <span className="mx-1">›</span>
+        <Link prefetch={true} href={`/admin/orders/${order._id}`}>{order._id}</Link>
       </div>
       <OrderDetailsForm
         order={order}

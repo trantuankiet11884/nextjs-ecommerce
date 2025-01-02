@@ -186,6 +186,7 @@ export default function SignUpForm() {
         <p className="text-sm">
           Bằng việc tạo tài khoản, bạn đồng ý với{" "}
           <Link
+            prefetch={true}
             href="/page/conditions-of-use"
             className="text-primary hover:underline"
           >
@@ -193,6 +194,7 @@ export default function SignUpForm() {
           </Link>{" "}
           và{" "}
           <Link
+            prefetch={true}
             href="/page/privacy-policy"
             className="text-primary hover:underline"
           >
@@ -206,6 +208,7 @@ export default function SignUpForm() {
         <p className="text-sm">
           Bạn đã có tài khoản?{" "}
           <Link
+            prefetch={true}
             className="text-primary hover:underline"
             href={`/sign-in?callbackUrl=${callbackUrl}`}
           >

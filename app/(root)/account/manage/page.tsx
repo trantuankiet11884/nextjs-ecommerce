@@ -16,7 +16,9 @@ export default async function ProfilePage() {
     <div className="mb-24">
       <SessionProvider session={session}>
         <div className="flex gap-2 ">
-          <Link href="/account">Tài khoản</Link>
+          <Link prefetch={true} href="/account">
+            Tài khoản
+          </Link>
           <span>›</span>
           <span>{PAGE_TITLE}</span>
         </div>
@@ -28,7 +30,7 @@ export default async function ProfilePage() {
               <p>{session?.user.name}</p>
             </div>
             <div>
-              <Link href="/account/manage/name">
+              <Link prefetch={true} href="/account/manage/name">
                 <Button className="rounded-full w-32" variant="outline">
                   <Edit />
                 </Button>
@@ -45,7 +47,7 @@ export default async function ProfilePage() {
               </p>
             </div>
             <div>
-              <Link href="#">
+              <Link prefetch={true} href="#">
                 <Button
                   disabled
                   className="rounded-full w-32"
@@ -66,7 +68,7 @@ export default async function ProfilePage() {
               </p>
             </div>
             <div>
-              <Link href="#">
+              <Link prefetch={true} href="#">
                 <Button
                   disabled
                   className="rounded-full w-32"

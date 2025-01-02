@@ -123,6 +123,7 @@ export default function CredentialsSignInForm() {
           <div className="text-sm">
             Bằng việc đăng nhập, bạn đồng ý với{" "}
             <Link
+              prefetch={true}
               href="/page/conditions-of-use"
               className="text-primary hover:underline"
             >
@@ -130,6 +131,7 @@ export default function CredentialsSignInForm() {
             </Link>{" "}
             và{" "}
             <Link
+              prefetch={true}
               href="/page/privacy-policy"
               className="text-primary hover:underline"
             >

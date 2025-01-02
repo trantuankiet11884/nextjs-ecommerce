@@ -28,7 +28,7 @@ const ProductCard = ({
   hideAddToCart?: boolean;
 }) => {
   const ProductImage = () => (
-    <Link href={`/product/${product.slug}`}>
+    <Link prefetch={true} href={`/product/${product.slug}`}>
       <div className="relative h-52">
         {product.images.length > 1 ? (
           <ImageHover
@@ -44,6 +44,7 @@ const ProductCard = ({
               fill
               sizes="80vw"
               className="object-contain"
+              loading="lazy"
             />
           </div>
         )}
@@ -54,6 +55,7 @@ const ProductCard = ({
     <div className="flex-1 space-y-2">
       <p className="font-bold">{product.brand}</p>
       <Link
+        prefetch={true}
         href={`/product/${product.slug}`}
         className="overflow-hidden text-ellipsis"
         style={{

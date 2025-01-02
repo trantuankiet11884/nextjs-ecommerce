@@ -96,6 +96,7 @@ export default function OrderDetailsForm({
                   <TableRow key={item.slug}>
                     <TableCell>
                       <Link
+                        prefetch={true}
                         href={`/product/${item.slug}`}
                         className="flex items-center"
                       >
@@ -104,6 +105,7 @@ export default function OrderDetailsForm({
                           alt={item.name}
                           width={50}
                           height={50}
+                          loading="lazy"
                         ></Image>
                         <span className="px-2">{item.name}</span>
                       </Link>
@@ -155,6 +157,7 @@ export default function OrderDetailsForm({
             </div>
             {!isPaid && ["Stripe", "PayPal"].includes(paymentMethod) && (
               <Link
+                prefetch={true}
                 className={cn(buttonVariants(), "w-full")}
                 href={`/checkout/${order._id}`}
               >

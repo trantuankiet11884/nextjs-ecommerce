@@ -260,6 +260,7 @@ const ProductForm = ({
                             className="w-36 h-36 object-cover object-center rounded-sm"
                             width={100}
                             height={100}
+                            loading="lazy"
                           />
                           <Button
                             variant={"destructive"}

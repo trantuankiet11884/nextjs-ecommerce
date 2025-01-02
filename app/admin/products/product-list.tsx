@@ -102,7 +102,9 @@ const ProductList = () => {
             </div>
           </div>
           <Button asChild variant="default">
-            <Link href="/admin/products/create">Tạo mới</Link>
+            <Link prefetch={true} href="/admin/products/create">
+              Tạo mới
+            </Link>
           </Button>
         </div>
         <div>
@@ -125,7 +127,10 @@ const ProductList = () => {
                 <TableRow key={product._id}>
                   <TableCell>{formatId(product._id)}</TableCell>
                   <TableCell>
-                    <Link href={`/admin/products/${product._id}`}>
+                    <Link
+                      prefetch={true}
+                      href={`/admin/products/${product._id}`}
+                    >
                       {product.name}
                     </Link>
                   </TableCell>
@@ -143,12 +148,19 @@ const ProductList = () => {
                   </TableCell>
                   <TableCell className="flex gap-1">
                     <Button asChild variant="warning" size="sm">
-                      <Link href={`/admin/products/${product._id}`}>
+                      <Link
+                        prefetch={true}
+                        href={`/admin/products/${product._id}`}
+                      >
                         <Edit2Icon />
                       </Link>
                     </Button>
                     <Button asChild variant="info" size="sm">
-                      <Link target="_blank" href={`/product/${product.slug}`}>
+                      <Link
+                        prefetch={true}
+                        target="_blank"
+                        href={`/product/${product.slug}`}
+                      >
                         <EyeIcon />
                       </Link>
                     </Button>

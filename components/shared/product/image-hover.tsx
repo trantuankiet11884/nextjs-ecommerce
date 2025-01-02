@@ -35,6 +35,7 @@ const ImageHover = ({
         className={`object-contain transition-opacity duration-500 ${
           isHovered ? "opacity-0" : "opacity-100"
         }`}
+        loading="lazy"
       />
       <Image
         src={hoverSrc}
@@ -44,6 +45,7 @@ const ImageHover = ({
         className={`absolute inset-0 object-contain transition-opacity duration-500 ${
           isHovered ? "opacity-100" : "opacity-0"
         }`}
+        loading="lazy"
       />
     </div>
   );

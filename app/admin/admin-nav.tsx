@@ -40,6 +40,7 @@ export function AdminNav({
     >
       {links.map((item) => (
         <Link
+          prefetch={true}
           key={item.href}
           href={item.href}
           className={cn(

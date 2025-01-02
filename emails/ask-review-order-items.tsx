@@ -102,7 +102,9 @@ export default async function AskReviewOrderItemsEmail({
               {order.items.map((item) => (
                 <Row key={item.product} className="mt-8">
                   <Column className="w-20">
-                    <Link href={`${SERVER_URL}/product/${item.slug}`}>
+                    <Link
+                      href={`${SERVER_URL}/product/${item.slug}`}
+                    >
                       <Img
                         width="80"
                         alt={item.name}
@@ -116,7 +118,9 @@ export default async function AskReviewOrderItemsEmail({
                     </Link>
                   </Column>
                   <Column className="align-top">
-                    <Link href={`${SERVER_URL}/product/${item.slug}`}>
+                    <Link
+                      href={`${SERVER_URL}/product/${item.slug}`}
+                    >
                       <Text className="mx-2 my-0">{item.name}</Text>
                     </Link>
                   </Column>

@@ -8,9 +8,13 @@ const CreateProductPage = () => {
   return (
     <main className="max-w-6xl mx-auto p-4">
       <div className="flex mb-4">
-        <Link href="/admin/products">Sản phẩm</Link>
+        <Link prefetch={true} href="/admin/products">
+          Sản phẩm
+        </Link>
         <span className="mx-1">›</span>
-        <Link href="/admin/products/create">Tạo sản phẩm</Link>
+        <Link prefetch={true} href="/admin/products/create">
+          Tạo sản phẩm
+        </Link>
       </div>
       <div className="my-8">
         <ProductForm type="Create" />

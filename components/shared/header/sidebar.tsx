@@ -33,7 +33,7 @@ export default async function Sidebar({
                 <UserCircle className="h-6 w-6 mr-2" />
                 {session ? (
                   <DrawerClose asChild>
-                    <Link href="/account">
+                    <Link prefetch={true} href="/account">
                       <span className="text-lg font-semibold">
                         Xin chào, {session.user.name}
                       </span>
@@ -41,7 +41,7 @@ export default async function Sidebar({
                   </DrawerClose>
                 ) : (
                   <DrawerClose asChild>
-                    <Link href="/sign-in">
+                    <Link prefetch={true} href="/sign-in">
                       <span className="text-lg font-semibold">Đăng nhập</span>
                     </Link>
                   </DrawerClose>
@@ -65,6 +65,7 @@ export default async function Sidebar({
               {categories.map((category) => (
                 <DrawerClose asChild key={category}>
                   <Link
+                    prefetch={true}
                     href={`/search?category=${category}`}
                     className={`flex items-center justify-between item-button`}
                   >
@@ -81,12 +82,16 @@ export default async function Sidebar({
               <h2 className="text-lg font-semibold">Trợ giúp & Cài đặt</h2>
             </div>
             <DrawerClose asChild>
-              <Link href="/account" className="item-button">
+              <Link prefetch={true} href="/account" className="item-button">
                 Tài khoản
               </Link>
             </DrawerClose>{" "}
             <DrawerClose asChild>
-              <Link href="/page/customer-service" className="item-button">
+              <Link
+                prefetch={true}
+                href="/page/customer-service"
+                className="item-button"
+              >
                 Dịch vụ khách hàng
               </Link>
             </DrawerClose>
@@ -100,7 +105,7 @@ export default async function Sidebar({
                 </Button>
               </form>
             ) : (
-              <Link href="/sign-in" className="item-button">
+              <Link prefetch={true} href="/sign-in" className="item-button">
                 Đăng nhập
               </Link>
             )}

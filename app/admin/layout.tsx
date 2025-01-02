@@ -20,6 +20,7 @@ export default async function AdminLayout({
                 width={48}
                 height={48}
                 alt={`${APP_NAME} logo`}
+                loading="lazy"
               />
             </Link>
             <AdminNav className="mx-6 hidden md:flex" />

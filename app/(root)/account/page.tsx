@@ -14,7 +14,7 @@ export default function AccountPage() {
       <h1 className="h1-bold py-4">{PAGE_TITLE}</h1>
       <div className="grid md:grid-cols-3 gap-4 items-stretch">
         <Card>
-          <Link href="/account/orders">
+          <Link prefetch={true} href="/account/orders">
             <CardContent className="flex items-start gap-4 p-6">
               <div>
                 <PackageCheckIcon className="w-12 h-12" />
@@ -29,7 +29,7 @@ export default function AccountPage() {
           </Link>
         </Card>
         <Card>
-          <Link href="/account/manage">
+          <Link prefetch={true} href="/account/manage">
             <CardContent className="flex items-start gap-4 p-6">
               <div>
                 <User className="w-12 h-12" />
@@ -44,7 +44,7 @@ export default function AccountPage() {
           </Link>
         </Card>
         <Card>
-          <Link href="/account/addresses">
+          <Link prefetch={true} href="/account/addresses">
             <CardContent className="flex items-start gap-4 p-6">
               <div>
                 <Home className="w-12 h-12" />

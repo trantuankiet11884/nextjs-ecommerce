@@ -26,7 +26,9 @@ export default async function WebPageAdminPage() {
       <div className="flex-between">
         <h1 className="h1-bold">Tạo trang web</h1>
         <Button asChild variant="default">
-          <Link href="/admin/web-pages/create">Tạo</Link>
+          <Link prefetch={true} href="/admin/web-pages/create">
+            Tạo
+          </Link>
         </Button>
       </div>
       <div>
@@ -51,7 +53,10 @@ export default async function WebPageAdminPage() {
                 </TableCell>
                 <TableCell className="flex gap-1">
                   <Button asChild variant="outline" size="sm">
-                    <Link href={`/admin/web-pages/${webPage._id}`}>
+                    <Link
+                      prefetch={true}
+                      href={`/admin/web-pages/${webPage._id}`}
+                    >
                       <EditIcon />
                     </Link>
                   </Button>

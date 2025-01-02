@@ -73,14 +73,18 @@ export default function RatingSummary({
           <div className="flex flex-col gap-2">
             <RatingDistribution />
             <Separator />
-            <Link className="highlight-link text-center" href="#reviews">
+            <Link
+              prefetch={true}
+              className="highlight-link text-center"
+              href="#reviews"
+            >
               Xem đánh giá
             </Link>
           </div>
         </PopoverContent>
       </Popover>
       <div className=" ">
-        <Link href="#reviews" className="highlight-link">
+        <Link prefetch={true} href="#reviews" className="highlight-link">
           {numReviews} đánh giá
         </Link>
       </div>

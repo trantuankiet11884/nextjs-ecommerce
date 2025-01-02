@@ -22,7 +22,7 @@ export default function CartAddItem({ itemId }: { itemId: string }) {
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
         <Card className="w-full rounded-none">
           <CardContent className="flex h-full items-center justify-center  gap-3 py-4">
-            <Link href={`/product/${item.slug}`}>
+            <Link prefetch={true} href={`/product/${item.slug}`}>
               <Image
                 src={item.image}
                 alt={item.name}
@@ -32,6 +32,7 @@ export default function CartAddItem({ itemId }: { itemId: string }) {
                   maxWidth: "100%",
                   height: "auto",
                 }}
+                loading="lazy"
               />
             </Link>
             <div>
@@ -84,6 +85,7 @@ export default function CartAddItem({ itemId }: { itemId: string }) {
                   <ProductPrice className="text-2xl" price={itemsPrice} />
                 </div>
                 <Link
+                  prefetch={true}
                   href="/checkout"
                   className={cn(buttonVariants(), "rounded-full w-full")}
                 >
@@ -91,6 +93,7 @@ export default function CartAddItem({ itemId }: { itemId: string }) {
                   phẩm)
                 </Link>
                 <Link
+                  prefetch={true}
                   href="/cart"
                   className={cn(
                     buttonVariants({ variant: "outline" }),

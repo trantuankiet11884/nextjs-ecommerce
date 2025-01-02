@@ -15,9 +15,13 @@ export default async function ProfilePage() {
     <div className="mb-24">
       <SessionProvider session={session}>
         <div className="flex gap-2 ">
-          <Link href="/account">Tài khoản</Link>
+          <Link prefetch={true} href="/account">
+            Tài khoản
+          </Link>
           <span>›</span>
-          <Link href="/account/manage">Đăng nhập và bảo mật</Link>
+          <Link prefetch={true} href="/account/manage">
+            Đăng nhập và bảo mật
+          </Link>
           <span>›</span>
           <span>{PAGE_TITLE}</span>
         </div>
