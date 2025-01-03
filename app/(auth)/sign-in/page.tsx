@@ -26,7 +26,7 @@ export default async function SignIn(props: {
     <div className="w-full">
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Sign In</CardTitle>
+          <CardTitle className="text-2xl text-center">Đăng nhập</CardTitle>
         </CardHeader>
         <CardContent>
           <div>

@@ -60,7 +60,7 @@ export default async function UserButton() {
                   className="w-full cursor-pointer"
                   href="/admin/overview"
                 >
-                  <DropdownMenuItem>Admin</DropdownMenuItem>
+                  <DropdownMenuItem>Quản lý</DropdownMenuItem>
                 </Link>
               )}
             </DropdownMenuGroup>
