@@ -45,7 +45,12 @@ export default function OverviewReport() {
   useEffect(() => {
     if (date) {
       startTransition(async () => {
-        setData(await getOrderSummary(date));
+        try {
+          const summaryData = await getOrderSummary(date);
+          setData(summaryData);
+        } catch (error) {
+          console.error("Error fetching order summary:", error);
+        }
       });
     }
   }, [date]);
