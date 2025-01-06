@@ -1,5 +1,5 @@
 "use client";
-import { redirect, useSearchParams } from "next/navigation";
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -34,8 +34,8 @@ const signInDefaultValues =
       };
 
 export default function CredentialsSignInForm() {
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
+  // const searchParams = useSearchParams();
+  // const callbackUrl = searchParams.get("callbackUrl") || "/";
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const form = useForm<IUserSignIn>({
@@ -51,7 +51,7 @@ export default function CredentialsSignInForm() {
         email: data.email,
         password: data.password,
       });
-      redirect(callbackUrl);
+      redirect("/");
     } catch (error) {
       if (isRedirectError(error)) {
         throw error;
@@ -68,7 +68,7 @@ export default function CredentialsSignInForm() {
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="hidden" name="callbackUrl" value={callbackUrl} />
+        {/* <input type="hidden" name="callbackUrl" value={callbackUrl} /> */}
         <div className="space-y-6">
           <FormField
             control={control}
