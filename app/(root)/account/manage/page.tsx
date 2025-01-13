@@ -40,6 +40,20 @@ export default async function ProfilePage() {
           <Separator />
           <CardContent className="p-4 flex justify-between flex-wrap">
             <div>
+              <h3 className="font-bold">Password</h3>
+              <p>************</p>
+            </div>
+            <div>
+              <Link prefetch={true} href="/account/manage/password">
+                <Button className="rounded-full w-32" variant="outline">
+                  <Edit />
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+          <Separator />
+          <CardContent className="p-4 flex justify-between flex-wrap">
+            <div>
               <h3 className="font-bold">Email</h3>
               <p>{session?.user.email}</p>
               <p className="text-gray-500">
@@ -53,23 +67,6 @@ export default async function ProfilePage() {
                   className="rounded-full w-32"
                   variant="outline"
                 >
-                  <Edit />
-                </Button>
-              </Link>
-            </div>
-          </CardContent>
-          <Separator />
-          <CardContent className="p-4 flex justify-between flex-wrap">
-            <div>
-              <h3 className="font-bold">Password</h3>
-              <p>************</p>
-              <p className="text-gray-500">
-                Sẽ được triển khai trong phiên bản tiếp theo.
-              </p>
-            </div>
-            <div>
-              <Link prefetch={true} href="/account/manage/password">
-                <Button className="rounded-full w-32" variant="outline">
                   <Edit />
                 </Button>
               </Link>
