@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import { createProduct, updateProduct } from "@/lib/actions/products.actions";
 import { IProduct } from "@/lib/db/models/product.model";
 import { UploadButton } from "@/lib/uploadthing";
@@ -25,6 +24,7 @@ import { Trash } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const productDefaultValues: IProductInput =
   process.env.NODE_ENV === "development"
@@ -86,19 +86,14 @@ const ProductForm = ({
     defaultValues:
       product && type === "Update" ? product : productDefaultValues,
   });
-  const { toast } = useToast();
+
   async function onSubmit(values: IProductInput) {
     if (type === "Create") {
       const res = await createProduct(values);
       if (!res.success) {
-        toast({
-          variant: "destructive",
-          description: res.message,
-        });
+        toast.warning(res.message);
       } else {
-        toast({
-          description: res.message,
-        });
+        toast.success(res.message);
         router.push(`/admin/products`);
       }
     }
@@ -109,10 +104,7 @@ const ProductForm = ({
       }
       const res = await updateProduct({ ...values, _id: productId });
       if (!res.success) {
-        toast({
-          variant: "destructive",
-          description: res.message,
-        });
+        toast.warning(res.message);
       } else {
         router.push(`/admin/products`);
       }
@@ -285,10 +277,7 @@ const ProductForm = ({
                             form.setValue("images", [...images, res[0].url]);
                           }}
                           onUploadError={(error: Error) => {
-                            toast({
-                              variant: "destructive",
-                              description: `ERROR! ${error.message}`,
-                            });
+                            toast.warning(error.message);
                           }}
                         />
                       </FormControl>

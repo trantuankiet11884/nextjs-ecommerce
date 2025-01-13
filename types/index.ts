@@ -5,6 +5,7 @@ import {
   ProductInputSchema,
   ReviewInputSchema,
   ShippingAddressSchema,
+  UserChangePassWordSchema,
   UserInputSchema,
   UserNameSchema,
   UserSignInSchema,
@@ -62,4 +63,5 @@ export type IUserInput = z.infer<typeof UserInputSchema>;
 export type IUserSignIn = z.infer<typeof UserSignInSchema>;
 export type IUserSignUp = z.infer<typeof UserSignUpSchema>;
 export type IUserName = z.infer<typeof UserNameSchema>;
+export type IUserChangePassword = z.infer<typeof UserChangePassWordSchema>;
 export type IWebPageInput = z.infer<typeof WebPageInputSchema>;

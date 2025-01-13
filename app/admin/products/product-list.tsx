@@ -32,6 +32,7 @@ const ProductList = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const [data, setData] = useState<ProductListDataProps>();
   const [isPending, startTransition] = useTransition();
+
   const handlePageChange = (changeType: "next" | "prev") => {
     const newPage = changeType === "next" ? page + 1 : page - 1;
     if (changeType === "next") {
@@ -47,6 +48,7 @@ const ProductList = () => {
       setData(data);
     });
   };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
@@ -65,12 +67,14 @@ const ProductList = () => {
       });
     }
   };
+
   useEffect(() => {
     startTransition(async () => {
       const data = await getAllProductsForAdmin({ query: "" });
       setData(data);
     });
   }, []);
+
   return (
     <div>
       <div className="space-y-2">

@@ -14,9 +14,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { updateUserName } from "@/lib/actions/user.actions";
 import { UserNameSchema } from "@/lib/validator";
+import { toast } from "react-toastify";
 export const ProfileForm = () => {
   const router = useRouter();
   const { data: session, update } = useSession();
@@ -26,14 +26,10 @@ export const ProfileForm = () => {
       name: session?.user?.name ?? "",
     },
   });
-  const { toast } = useToast();
+
   async function onSubmit(values: z.infer<typeof UserNameSchema>) {
     const res = await updateUserName(values);
-    if (!res.success)
-      return toast({
-        variant: "destructive",
-        description: res.message,
-      });
+    if (!res.success) return toast.error("Có lỗi xảy ra, hãy thao tác lại");
     const { data, message } = res;
     const newSession = {
       ...session,
@@ -43,9 +39,7 @@ export const ProfileForm = () => {
       },
     };
     await update(newSession);
-    toast({
-      description: message,
-    });
+    toast.success(message);
     router.push("/account/manage");
   }
   return (

@@ -40,7 +40,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import {
   createUpdateReview,
   getReviewByProductId,
@@ -51,6 +50,7 @@ import RatingSummary from "@/components/shared/product/rating-summary";
 import { IProduct } from "@/lib/db/models/product.model";
 import { Separator } from "@/components/ui/separator";
 import { IReviewDetails } from "@/types";
+import { toast } from "react-toastify";
 const reviewFormDefaultValues = {
   title: "",
   comment: "",
@@ -74,10 +74,7 @@ export default function ReviewList({
       setTotalPages(res.totalPages);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
-      toast({
-        variant: "destructive",
-        description: "Error in fetching reviews",
-      });
+      toast.error("Có lỗi khi lấy dữ liệu");
     }
   };
   const loadMoreReviews = async () => {
@@ -89,7 +86,9 @@ export default function ReviewList({
     setTotalPages(res.totalPages);
     setPage(page + 1);
   };
+
   const [loadingReviews, setLoadingReviews] = useState(false);
+
   useEffect(() => {
     const loadReviews = async () => {
       setLoadingReviews(true);
@@ -103,28 +102,23 @@ export default function ReviewList({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
+
   type CustomerReview = z.infer<typeof ReviewInputSchema>;
   const form = useForm<CustomerReview>({
     resolver: zodResolver(ReviewInputSchema),
     defaultValues: reviewFormDefaultValues,
   });
   const [open, setOpen] = useState(false);
-  const { toast } = useToast();
+
   const onSubmit: SubmitHandler<CustomerReview> = async (values) => {
     const res = await createUpdateReview({
       data: { ...values, product: product._id },
       path: `/product/${product.slug}`,
     });
-    if (!res.success)
-      return toast({
-        variant: "destructive",
-        description: res.message,
-      });
+    if (!res.success) return toast.warning("Có lỗi xảy ra, hãy thao tác lại");
     setOpen(false);
     reload();
-    toast({
-      description: res.message,
-    });
+    toast.success(res.message);
   };
   const handleOpenForm = async () => {
     form.setValue("product", product._id);

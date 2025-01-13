@@ -68,12 +68,8 @@ export default async function ProfilePage() {
               </p>
             </div>
             <div>
-              <Link prefetch={true} href="#">
-                <Button
-                  disabled
-                  className="rounded-full w-32"
-                  variant="outline"
-                >
+              <Link prefetch={true} href="/account/manage/password">
+                <Button className="rounded-full w-32" variant="outline">
                   <Edit />
                 </Button>
               </Link>

@@ -5,7 +5,6 @@ import {
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import { Card, CardContent } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
 import {
   approvePayPalOrder,
   createPayPalOrder,
@@ -16,6 +15,7 @@ import CheckoutFooter from "../checkout-footer";
 import { redirect, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import ProductPrice from "@/components/shared/product/product-price";
+import { toast } from "react-toastify";
 export default function OrderPaymentForm({
   order,
   paypalClientId,
@@ -36,7 +36,6 @@ export default function OrderPaymentForm({
     expectedDeliveryDate,
     isPaid,
   } = order;
-  const { toast } = useToast();
   if (isPaid) {
     redirect(`/account/orders/${order._id}`);
   }
@@ -52,19 +51,16 @@ export default function OrderPaymentForm({
   }
   const handleCreatePayPalOrder = async () => {
     const res = await createPayPalOrder(order._id);
-    if (!res.success)
-      return toast({
-        description: res.message,
-        variant: "destructive",
-      });
+    if (!res.success) return toast.warning(res.message);
     return res.data;
   };
   const handleApprovePayPalOrder = async (data: { orderID: string }) => {
     const res = await approvePayPalOrder(order._id, data);
-    toast({
-      description: res.message,
-      variant: res.success ? "default" : "destructive",
-    });
+    if (res.success) {
+      toast.success(res.message);
+    } else {
+      toast.error(res.message);
+    }
   };
   const CheckoutSummary = () => (
     <Card>

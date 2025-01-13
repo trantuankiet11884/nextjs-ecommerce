@@ -14,13 +14,13 @@ import {
 import { useForm } from "react-hook-form";
 import { IUserSignIn } from "@/types";
 import { signInWithCredentials } from "@/lib/actions/user.actions";
-import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserSignInSchema } from "@/lib/validator";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { APP_NAME } from "@/lib/constants";
 import { useState } from "react";
 import { EyeIcon, EyeOff } from "lucide-react";
+import { toast } from "react-toastify";
 
 const signInDefaultValues =
   process.env.NODE_ENV === "development"
@@ -51,17 +51,14 @@ export default function CredentialsSignInForm() {
         email: data.email,
         password: data.password,
       });
+      toast.success("Đăng nhập thành công");
       redirect(callbackUrl);
     } catch (error) {
       if (isRedirectError(error)) {
         throw error;
       }
       console.log(error);
-      toast({
-        title: "Error",
-        description: "Invalid email or password",
-        variant: "destructive",
-      });
+      toast.error("Sai tài khoản hoặc mật khẩu");
     }
   };
 

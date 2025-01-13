@@ -17,7 +17,6 @@ import {
   registerUser,
   signInWithCredentials,
 } from "@/lib/actions/user.actions";
-import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserSignUpSchema } from "@/lib/validator";
 import { Separator } from "@/components/ui/separator";
@@ -25,6 +24,7 @@ import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { APP_NAME } from "@/lib/constants";
 import { useState } from "react";
 import { EyeIcon, EyeOff } from "lucide-react";
+import { toast } from "react-toastify";
 
 const signUpDefaultValues =
   process.env.NODE_ENV === "development"
@@ -56,27 +56,21 @@ export default function SignUpForm() {
     try {
       const res = await registerUser(data);
       if (!res.success) {
-        toast({
-          title: "Error",
-          description: res.error,
-          variant: "destructive",
-        });
+        toast.info("Có lỗi xảy ra, hãy thao tác lại");
         return;
       }
       await signInWithCredentials({
         email: data.email,
         password: data.password,
       });
+      toast.success("Tạo tài khoản thành công...");
       redirect(callbackUrl);
-    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
       if (isRedirectError(error)) {
         throw error;
       }
-      toast({
-        title: "Error",
-        description: "Invalid email or password",
-        variant: "destructive",
-      });
+      toast.error(error.message);
     }
   };
 

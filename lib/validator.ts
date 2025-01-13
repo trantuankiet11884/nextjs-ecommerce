@@ -206,3 +206,14 @@ export const UserSignUpSchema = UserSignInSchema.extend({
 export const UserNameSchema = z.object({
   name: UserName,
 });
+
+export const UserChangePassWordSchema = z
+  .object({
+    oldPassword: Password,
+    newPassword: Password,
+    confirmPassword: Password,
+  })
+  .refine((data) => data.newPassword === data.confirmPassword, {
+    message: "Sai mật khẩu",
+    path: ["confirmPassword"],
+  });

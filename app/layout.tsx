@@ -5,6 +5,8 @@ import { APP_DESCRIPTION, APP_NAME, APP_SLOGAN } from "@/lib/constants";
 import LoadingProvider from "../components/shared/LoadingProvider";
 import { Suspense } from "react";
 import LoadingPage from "./loading";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +47,18 @@ export default function RootLayout({
           <LoadingProvider />
         </Suspense>
         {children}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={true}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );

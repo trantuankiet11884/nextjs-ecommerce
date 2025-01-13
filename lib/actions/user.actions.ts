@@ -2,7 +2,12 @@
 
 import bcrypt from "bcryptjs";
 import { auth, signIn, signOut } from "@/auth";
-import { IUserName, IUserSignIn, IUserSignUp } from "@/types";
+import {
+  IUserChangePassword,
+  IUserName,
+  IUserSignIn,
+  IUserSignUp,
+} from "@/types";
 import { redirect } from "next/navigation";
 import { UserSignUpSchema, UserUpdateSchema } from "../validator";
 import { connectToDatabase } from "../db";
@@ -123,5 +128,46 @@ export async function updateUserName(user: IUserName) {
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
+  }
+}
+
+export async function changeUserPassword(passwords: IUserChangePassword) {
+  try {
+    await connectToDatabase();
+    const session = await auth();
+
+    // Kiểm tra người dùng đã đăng nhập
+    if (!session?.user?.id) {
+      throw new Error("Bạn cần đăng nhập để thực hiện thao tác này");
+    }
+
+    const user = await User.findById(session.user.id);
+    if (!user) {
+      throw new Error("Không tìm thấy người dùng");
+    }
+
+    // Kiểm tra mật khẩu cũ
+    const isValidPassword = await bcrypt.compare(
+      passwords.oldPassword,
+      user.password
+    );
+
+    if (!isValidPassword) {
+      throw new Error("Mật khẩu cũ không chính xác");
+    }
+
+    // Hash và cập nhật mật khẩu mới
+    user.password = await bcrypt.hash(passwords.newPassword, 5);
+    await user.save();
+
+    return {
+      success: true,
+      message: "Đổi mật khẩu thành công",
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: formatError(error),
+    };
   }
 }
