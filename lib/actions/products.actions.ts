@@ -11,7 +11,7 @@ export async function createProduct(data: IProductInput) {
     revalidatePath("/admin/products");
     return {
       success: true,
-      message: "Product created successfully",
+      message: "Sản phẩm được tạo thành công",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -26,7 +26,7 @@ export async function updateProduct(data: z.infer<typeof ProductUpdateSchema>) {
     revalidatePath("/admin/products");
     return {
       success: true,
-      message: "Product updated successfully",
+      message: "Sản phẩm được cập nhật thành công",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -138,7 +138,7 @@ export async function deleteProduct(id: string) {
     revalidatePath("/admin/products");
     return {
       success: true,
-      message: "Product deleted successfully",
+      message: "Đã xóa sản phẩm thành công",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };

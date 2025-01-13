@@ -15,7 +15,7 @@ export async function createWebPage(data: z.infer<typeof WebPageInputSchema>) {
     revalidatePath("/admin/web-pages");
     return {
       success: true,
-      message: "WebPage created successfully",
+      message: "Trang web được tạo thành công",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -30,7 +30,7 @@ export async function updateWebPage(data: z.infer<typeof WebPageUpdateSchema>) {
     revalidatePath("/admin/web-pages");
     return {
       success: true,
-      message: "WebPage updated successfully",
+      message: "Trang web được cập nhật thành công",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -46,7 +46,7 @@ export async function deleteWebPage(id: string) {
     revalidatePath("/admin/web-pages");
     return {
       success: true,
-      message: "WebPage deleted successfully",
+      message: "Trang web đã được xóa thành công",
     };
   } catch (error) {
     return { success: false, message: formatError(error) };

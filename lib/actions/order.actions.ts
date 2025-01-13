@@ -345,7 +345,7 @@ export const createOrder = async (clientSideCart: Cart) => {
     );
     return {
       success: true,
-      message: "Order placed successfully",
+      message: "Đơn hàng được đặt thành công",
       data: { orderId: createdOrder._id.toString() },
     };
   } catch (error) {
@@ -400,7 +400,7 @@ export async function createPayPalOrder(orderId: string) {
       await order.save();
       return {
         success: true,
-        message: "PayPal order created successfully",
+        message: "Đơn hàng PayPal được tạo thành công",
         data: paypalOrder.id,
       };
     } else {
@@ -441,7 +441,7 @@ export async function approvePayPalOrder(
     revalidatePath(`/account/orders/${orderId}`);
     return {
       success: true,
-      message: "Your order has been successfully paid by PayPal",
+      message: "Đơn hàng của bạn đã được PayPal thanh toán thành công",
     };
   } catch (err) {
     return { success: false, message: formatError(err) };

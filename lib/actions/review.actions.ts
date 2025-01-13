@@ -39,7 +39,7 @@ export async function createUpdateReview({
       revalidatePath(path);
       return {
         success: true,
-        message: "Review updated successfully",
+        message: "Đã cập nhật đánh giá thành công",
       };
     } else {
       await Review.create(review);
@@ -47,7 +47,7 @@ export async function createUpdateReview({
       revalidatePath(path);
       return {
         success: true,
-        message: "Review created successfully",
+        message: "Đánh giá được tạo thành công",
       };
     }
   } catch (error) {
